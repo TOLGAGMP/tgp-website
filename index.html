@@ -2265,13 +2265,8 @@ const kodByIl = {};
 
 
     function seedDemoDataIfEmpty() {
-        const existingAssignments = getAssignments();
-        const existingApplications = getApplications();
-
-        // Sadece ilk açılışta, veri yoksa demo doldur
-        if (existingAssignments.length || existingApplications.length) {
-            return;
-        }
+        // Demo verisi devre dışı bırakıldı.
+    }
 
         const demoPositions = [
             "İl Başkanı",
@@ -2400,7 +2395,6 @@ const kodByIl = {};
     }
 
 document.addEventListener('DOMContentLoaded', () => {
-        seedDemoDataIfEmpty();
         // İl dropdownlarını doldur
         populateIlSelect('bf-il');
         populateIlSelect('admin-panel-il');
