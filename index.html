@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description"
           content="Türkiye Gençlik Partisi resmi web sitesi. Parti programı, teşkilat yapısı, görev ve üyelik başvurusu, duyurular ve iletişim bilgileri." />
+    <meta name="keywords" content="Türkiye Gençlik Partisi, gençlik partisi, siyasi parti, gençlik siyaseti, TGP" />
+    <meta property="og:title" content="Türkiye Gençlik Partisi - Resmi Web Sitesi" />
+    <meta property="og:description" content="Türkiye Gençlik Partisi resmi web sitesi. Parti programı, teşkilat yapısı, başvuru formları ve güncel duyurular." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="parti-amblem.jpeg" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="parti-amblem.jpeg" type="image/jpeg" />
+
 
     <style>
 
@@ -827,6 +836,25 @@
         color: #6b7280;
     }
 
+    
+    .nav-toggle {
+        display: none;
+        background: transparent;
+        border-radius: 999px;
+        border: 1px solid rgba(248, 250, 252, 0.7);
+        padding: 4px 10px;
+        color: #ffffff;
+        font-size: 14px;
+        cursor: pointer;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .nav-toggle span {
+        font-size: 16px;
+        line-height: 1;
+    }
+
     @media (max-width: 900px) {
         .hero-inner {
             grid-template-columns: minmax(0, 1fr);
@@ -848,7 +876,20 @@
         }
 
         nav {
-            justify-content: flex-start;
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            margin-top: 6px;
+        }
+
+        nav.is-open {
+            display: flex;
+        }
+
+        .nav-toggle {
+            display: inline-flex;
+            margin-left: auto;
+            margin-top: 6px;
         }
 
         .hero {
@@ -873,7 +914,6 @@
             align-items: flex-start;
         }
     }
-
 </style>
 </head>
 
@@ -893,13 +933,12 @@
                 <a href="#program">Parti Programı</a>
                 <a href="#kurucu">Kurucu</a>
                 <a href="#mevzuat">Mevzuat</a>
-                <!-- Teşkilat sekmesi kaldırıldı -->
                 <a href="#uye-ol">Teşkilat Başvurusu</a>
-                
                 <a href="#duyurular">Duyurular</a>
                 <a href="#iletisim">İletişim</a>
                 <a href="#" id="admin-link">Yönetici</a>
             </nav>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menüyü Aç/Kapat"><span>☰</span> Menü</button>
         </div>
     </div>
 </header>
@@ -959,209 +998,57 @@
         <div class="program-accordion">
             <article class="program-item">
                 <button class="program-toggle">
-                    <span>I. Yeni Türk Devlet Modeli</span>
+                    <span>I. Gençlik Merkezli Devlet Modeli</span>
                     <span class="program-icon">+</span>
                 </button>
                 <div class="program-panel">
                     <p>
-                        Türkiye Gençlik Partisi; devletin, vatandaşın asgari yaşam standartlarını güvence altına aldığı,
-                        gençlerin gelecek kaygısının azaltıldığı ve herkesin üretken bir işle buluşabildiği yeni bir devlet
-                        modelini savunur.
+                        Devlet yönetiminde gençlerin karar alma mekanizmalarına doğrudan katılımını ve temsili artıran
+                        yeni bir model öneriyoruz.
                     </p>
                     <ul>
-                        <li>Barınma, eğitim, sağlık ve istihdamda asgari standartların anayasal güvenceye kavuşturulması,</li>
-                        <li>Gençler için eğitimden işe geçişi kolaylaştıran, öngörülebilir bir kariyer ve istihdam planlaması,</li>
-                        <li>Devletin bürokratik hantallıktan uzak, verimliliği ve hizmet kalitesini önceleyen bir yapıya kavuşturulması.</li>
+                        <li>Gençlik meclislerinin yerel ve ulusal düzeyde kurumsallaştırılması,</li>
+                        <li>18–30 yaş arası gençlerin seçilebilirlik ve temsil oranlarının yükseltilmesi,</li>
+                        <li>Dijital katılım araçlarıyla politika üretimine sürekli geri bildirim mekanizması.</li>
                     </ul>
                 </div>
             </article>
 
             <article class="program-item">
                 <button class="program-toggle">
-                    <span>II. Doğrudan Demokrasi ve Temsil Reformu</span>
+                    <span>II. Dijital Demokrasi ve Şeffaf Yönetim</span>
                     <span class="program-icon">+</span>
                 </button>
                 <div class="program-panel">
                     <p>
-                        Millet iradesinin yalnızca seçim günleriyle sınırlı kalmadığı, seçmenin temsilcileri üzerinde
-                        gerçek denetim gücüne sahip olduğu bir demokrasi anlayışı esas alınır.
+                        Tüm kamu süreçlerinin izlenebilir, denetlenebilir ve şeffaf olması için açık veri ve dijital
+                        demokrasi araçlarını hayata geçiriyoruz.
                     </p>
                     <ul>
-                        <li>Milletvekili ve belediye başkanlarının, belirli bir seçmen çoğunluğu ile görevden geri çağrılabilmesi,</li>
-                        <li>Aday belirlemede kapalı liste sisteminin etkisini azaltan, şahıs bazlı tercih imkânı veren modeller,</li>
-                        <li>Milletvekilliği ve cumhurbaşkanlığı için dönem ve yaş sınırı getirerek sağlıklı kuşak yenilenmesi,</li>
-                        <li>Kritik konularda bağlayıcı veya danışma nitelikli halk oylaması mekanizmalarının yaygınlaştırılması.</li>
+                        <li>Açık bütçe ve açık ihale platformları,</li>
+                        <li>Dijital referandum ve e-katılım sistemleri,</li>
+                        <li>Yolsuzlukla mücadelede sıfır tolerans ilkesi.</li>
                     </ul>
                 </div>
             </article>
 
             <article class="program-item">
                 <button class="program-toggle">
-                    <span>III. Şeffaf Devlet ve Hesap Verebilirlik</span>
+                    <span>III. Gençler İçin Ekonomi ve Girişimcilik</span>
                     <span class="program-icon">+</span>
                 </button>
                 <div class="program-panel">
                     <p>
-                        Kamu gücünü kullanan herkesin, millete karşı açık ve hesap verebilir olduğu bir yönetim kültürü
-                        kurumsallaştırılacaktır.
+                        Gençlerin kendi işini kurabildiği, nitelikli istihdama erişebildiği ve yüksek katma değerli
+                        alanlarda üretim yaptığı bir ekonomik yapı hedefliyoruz.
                     </p>
                     <ul>
-                        <li>Tüm bakanlık, belediye ve kamu kurumlarının; bütçe, ihale ve performans verilerini gerçek zamanlı
-                            dijital platformlarda yayımlaması,</li>
-                        <li>Milletvekilleri, belediye başkanları ve üst düzey kamu görevlilerinin düzenli mal varlığı beyanı,
-                            beyanların kamuya açık olması,</li>
-                        <li>Kamu malını zimmete geçirme, ağır nitelikli yolsuzluk ve rüşvet suçları için en ağır yaptırımların
-                            öngörülmesi,</li>
-                        <li>Yolsuzlukla mücadelede sivil toplum, medya ve bağımsız denetim kurumlarının etkin rol alması.</li>
+                        <li>Genç girişimcilere faizsiz başlangıç destekleri,</li>
+                        <li>Teknoloji, oyun, yapay zekâ ve yeşil ekonomi odaklı teşvik programları,</li>
+                        <li>Yeni mezunlar için geçiş dönemi istihdam destekleri.</li>
                     </ul>
                 </div>
             </article>
-
-            <article class="program-item">
-                <button class="program-toggle">
-                    <span>IV. Ekonomi ve Üretim Modeli</span>
-                    <span class="program-icon">+</span>
-                </button>
-                <div class="program-panel">
-                    <p>
-                        Türkiye; ithalata bağımlı, tüketim odaklı yapıdan çıkarılarak, yüksek katma değerli ve teknoloji
-                        yoğun üretim ekonomisine dönüştürülecektir.
-                    </p>
-                    <ul>
-                        <li>Köylerin yalnızca tarım alanı değil; kırsal sanayi, gıda işleme, lojistik ve teknoloji tabanlı
-                            üretim merkezlerine dönüştürülmesi,</li>
-                        <li>Devletin; üniversiteler, meslek yüksekokulları ve özel sektör arasında kalıcı istihdam eşleştirme
-                            platformları kurması,</li>
-                        <li>Gençler için meslek edinme + istihdam garantili programlar ve bölgesel teşvik paketleri,</li>
-                        <li>Köyden kente zorunlu göçü azaltan, dengeli ve sürdürülebilir kalkınma modeli.</li>
-                    </ul>
-                </div>
-            </article>
-
-            <article class="program-item">
-                <button class="program-toggle">
-                    <span>V. Şehircilik ve Konut Reformu</span>
-                    <span class="program-icon">+</span>
-                </button>
-                <div class="program-panel">
-                    <p>
-                        Dikey ve plansız yapılaşma yerine; güvenli, sağlıklı, yeşil alanı bol, yatay ve insan odaklı
-                        yerleşim modeli esas alınacaktır.
-                    </p>
-                    <ul>
-                        <li>Dar ve orta gelirli vatandaşlar için devlet destekli, altyapısı tamamlanmış müstakil veya bahçeli
-                            konut projeleri,</li>
-                        <li>Ulaşım, yeşil alan, eğitim, sağlık ve sosyal donatıların birlikte planlandığı bütüncül şehircilik
-                            anlayışı,</li>
-                        <li>Deprem ve afet riskine göre zorunlu kentsel dönüşüm öncelikleri,</li>
-                        <li>Şehirleri beton yığınları olmaktan çıkarıp, nitelikli yaşam alanlarına dönüştüren tasarım ilkeleri.</li>
-                    </ul>
-                </div>
-            </article>
-
-            <article class="program-item">
-                <button class="program-toggle">
-                    <span>VI. Eğitim Reformu</span>
-                    <span class="program-icon">+</span>
-                </button>
-                <div class="program-panel">
-                    <p>
-                        Eğitim sistemi; tek sınav merkezli baskıcı yapıdan çıkarılıp, hayat boyu öğrenme ve yetenek geliştirmeyi
-                        esas alan adil bir modele dönüştürülecektir.
-                    </p>
-                    <ul>
-                        <li>Teknik liseler ve meslek yüksekokullarının bütünleştirilerek, başarılı mezunlara ilgili lisans
-                            programlarının 3. sınıfına geçiş hakkı tanınması,</li>
-                        <li>Üniversiteye geçiş sınavının yıl içinde dört oturum şeklinde yapılarak fırsat eşitliğinin artırılması,</li>
-                        <li>Öğrencilere barınma, beslenme, ulaşım ve eğitim materyali desteği ile maddi engellerin kaldırılması,</li>
-                        <li>Eleştirel düşünme, bilimsel yöntem, yabancı dil ve dijital yetkinliklerin merkeze alındığı müfredat.</li>
-                    </ul>
-                </div>
-            </article>
-
-            <article class="program-item">
-                <button class="program-toggle">
-                    <span>VII. Teknoloji, AR-GE ve Uzay Programı</span>
-                    <span class="program-icon">+</span>
-                </button>
-                <div class="program-panel">
-                    <p>
-                        Türkiye’nin uzun vadeli güvenliği ve refahı için teknoloji, savunma ve uzay alanlarında
-                        tam bağımsızlık hedeflenmektedir.
-                    </p>
-                    <ul>
-                        <li>Millî seyir ve konumlama sistemleri, yerli harita ve coğrafi bilgi altyapısının geliştirilmesi,</li>
-                        <li>Bağımsız atış kontrol çözümleri, sensör ağları ve karar destek sistemlerinin millîleştirilmesi,</li>
-                        <li>Yörünge uyduları, yüksek çözünürlüklü gözlem sistemleri ve insansız hava-uzay araçları için
-                            güçlü bir ulusal uzay programı,</li>
-                        <li>Üniversiteler, teknoparklar ve özel sektörle entegre çalışan ulusal Ar-Ge ekosistemi.</li>
-                    </ul>
-                </div>
-            </article>
-
-            <article class="program-item">
-                <button class="program-toggle">
-                    <span>VIII. Ulusal Güvenlik Doktrini</span>
-                    <span class="program-icon">+</span>
-                </button>
-                <div class="program-panel">
-                    <p>
-                        Ulusal güvenlik stratejisi; savunma sanayiinde tam bağımsızlık, terörle kararlı mücadele ve
-                        kamu vicdanını önceleyen adalet ilkeleri üzerine kurulacaktır.
-                    </p>
-                    <ul>
-                        <li>Radar, elektronik harp, haberleşme, füze-roket ve komuta-kontrol altyapısında yabancı bağımlılığın
-                            asgariye indirilmesi, kritik sistemlerde tamamen ortadan kaldırılması,</li>
-                        <li>Terör suçlarında genel af uygulamasına son verilmesi, ceza indirimi alanlarının daraltılması,</li>
-                        <li>Toplumda derin huzursuzluk yaratan güvenlik kararlarında zorunlu halk oylaması mekanizması,</li>
-                        <li>Hudut, deniz ve siber güvenlik alanlarında genç uzmanlara kariyer imkânı sağlayan programlar.</li>
-                    </ul>
-                </div>
-            </article>
-
-            <article class="program-item">
-                <button class="program-toggle">
-                    <span>IX. Adalet ve Yönetim Ahlakı</span>
-                    <span class="program-icon">+</span>
-                </button>
-                <div class="program-panel">
-                    <p>
-                        Yargı sistemine güvenin yeniden inşası ve kamu yönetiminde ahlaki standartların yükseltilmesi temel
-                        önceliktir.
-                    </p>
-                    <ul>
-                        <li>Yargı süreçlerinin hızlandırılması; aynı zamanda savunma hakkı ve adil yargılanma ilkesinin
-                            eksiksiz korunması,</li>
-                        <li>Üst düzey kamu görevleri için mesleki yeterlilik, etik sicil ve şeffaflık kriterlerinin zorunlu
-                            hâle getirilmesi,</li>
-                        <li>Ciddi yolsuzluk veya etik ihlal iddialarında tarafsız inceleme kurullarının hızlıca devreye girmesi,</li>
-                        <li>Toplumda güven kaybına yol açan hiçbir yöneticinin görevde kalmaya devam etmemesi.</li>
-                    </ul>
-                </div>
-            </article>
-
-            <article class="program-item">
-                <button class="program-toggle">
-                    <span>X. Akil İnsanlar Kurulu</span>
-                    <span class="program-icon">+</span>
-                </button>
-                <div class="program-panel">
-                    <p>
-                        Günlük politik çekişmelerin ötesinde, Türkiye’nin uzun vadeli çıkarlarını bilimsel ve stratejik
-                        bakışla değerlendiren bir üst danışma mekanizması kurulacaktır.
-                    </p>
-                    <ul>
-                        <li>Mühendisler, bilim insanları, hukukçular, iktisatçılar ve güvenlik uzmanlarından oluşan,
-                            üyeleri doğrudan halk tarafından seçilen bir Akil İnsanlar Kurulu,</li>
-                        <li>Kurul kararlarının bağlayıcı olmamakla birlikte; cumhurbaşkanı, hükümet ve TBMM için zorunlu
-                            danışma niteliği taşıması,</li>
-                        <li>Stratejik konularda bilimsel veriye dayalı, şeffaf ve gerekçeli görüş raporlarının yayımlanması,</li>
-                        <li>Genç uzmanların da dâhil edileceği çalışma komisyonları ile sürekli istişare kültürünün
-                            kurumsallaştırılması.</li>
-                    </ul>
-                </div>
-            </article>
-        </div>   </article>
         </div>
     </div>
 </section>
@@ -1397,6 +1284,7 @@
         </div>
     </div>
 </section>
+
 <!-- DUYURULAR -->
 <section id="duyurular">
     <div class="container">
@@ -1575,15 +1463,6 @@
     </div>
 </div>
 
-<footer>
-    <div class="container">
-        <div class="footer-flex">
-            <div>© Türkiye Gençlik Partisi – Demo Web Sitesi</div>
-            <div>
-                <span>81 İl Teşkilatı Vizyonu</span>
-            </div>
-        </div>
-    </div>
 
 <div class="admin-modal-backdrop" id="kvkk-aydinlatma-modal" aria-hidden="true">
     <div class="admin-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="kvkk-aydinlatma-title">
@@ -1623,6 +1502,16 @@
         </div>
     </div>
 </div>
+
+<footer>
+    <div class="container">
+        <div class="footer-flex">
+            <div>© Türkiye Gençlik Partisi – Demo Web Sitesi</div>
+            <div>
+                <span>81 İl Teşkilatı Vizyonu</span>
+            </div>
+        </div>
+    </div>
 </footer>
 
 <script>
@@ -2107,7 +1996,6 @@ const kodByIl = {};
             const egitim = document.getElementById('bf-egitim').value;
             const adres = document.getElementById('bf-adres').value.trim();
             const aciklama = document.getElementById('bf-aciklama').value.trim();
-
             const kvkk = document.getElementById('bf-kvkk');
             if (!kvkk || !kvkk.checked) {
                 if (sonuc) {
@@ -2116,6 +2004,7 @@ const kodByIl = {};
                 }
                 return;
             }
+
 
             if (!isim || !tc || !dogum || !tel || !email || !il || !pozisyon || !egitim || !adres) {
                 if (sonuc) {
@@ -2487,18 +2376,26 @@ const kodByIl = {};
             });
         }
 
-        // Arka plana tıklayınca kapansın
         modal.addEventListener('click', function (e) {
             if (e.target === modal) {
                 closeModal();
             }
         });
 
-        // Esc ile kapatma
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') {
                 closeModal();
             }
+        });
+    }
+
+    function setupNavToggle() {
+        const btn = document.getElementById('nav-toggle');
+        const nav = document.querySelector('header nav');
+        if (!btn || !nav) return;
+
+        btn.addEventListener('click', function () {
+            nav.classList.toggle('is-open');
         });
     }
 
@@ -2520,6 +2417,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setupBasvuruForm();
         setupKvkkModal();
+        setupNavToggle();
         setupUyelikForm();
         setupIletisimForm();
         setupAdminModals();
