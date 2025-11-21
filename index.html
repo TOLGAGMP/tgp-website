@@ -1,0 +1,2534 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <title>TÜRKİYE GENÇLİK PARTİSİ - Resmi Web Sitesi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+          content="Türkiye Gençlik Partisi resmi web sitesi. Parti programı, teşkilat yapısı, görev ve üyelik başvurusu, duyurular ve iletişim bilgileri." />
+
+    <style>
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background-color: #f3f4f6;
+        color: #111827;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+        outline: 2px solid #2563eb;
+        outline-offset: 2px;
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    /* ÜST MENÜ */
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: #0b3c5d;
+        color: #ffffff;
+        padding: 10px 0 12px 0;
+        border-bottom: 4px solid #d62828;
+        box-shadow: 0 5px 15px rgba(15, 23, 42, 0.35);
+    }
+
+    .top-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+    }
+
+    .logo-wrap {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo-wrap img {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+        border: 2px solid rgba(248, 250, 252, 0.9);
+    }
+
+    .logo-text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo-text span:first-child {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        opacity: 0.9;
+    }
+
+    .logo-text strong {
+        font-size: 19px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        font-size: 14px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    nav a {
+        opacity: 0.9;
+        padding: 6px 0;
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.15s ease, opacity 0.15s ease, transform 0.12s ease;
+    }
+
+    nav a:hover {
+        border-bottom-color: #fbbf24;
+        opacity: 1;
+        transform: translateY(-1px);
+    }
+
+    nav a#admin-link {
+        font-weight: 600;
+        color: #fee2e2;
+    }
+
+    .btn-top {
+        background: #d62828;
+        color: #ffffff;
+        padding: 7px 14px;
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 600;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(254, 226, 226, 0.8);
+    }
+
+    /* HERO */
+    .hero {
+        background: radial-gradient(circle at top left, #1d4ed8 0%, #0b3c5d 40%, #020617 100%);
+        color: #ffffff;
+        padding: 42px 0 56px 0;
+    }
+
+    .hero-inner {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 32px;
+        align-items: center;
+    }
+
+    .hero-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 18px;
+    }
+
+    .badge {
+        font-size: 11px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        backdrop-filter: blur(4px);
+        background: rgba(15, 23, 42, 0.25);
+    }
+
+    .hero-title {
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        max-width: 600px;
+    }
+
+    .hero-subtitle {
+        font-size: 15px;
+        max-width: 540px;
+        opacity: 0.9;
+        margin-bottom: 22px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .btn {
+        padding: 9px 18px;
+        border-radius: 999px;
+        border: none;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        transition: transform 0.12s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
+    }
+
+    .btn-primary {
+        background: #fbbf24;
+        color: #111827;
+        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.4);
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.6);
+    }
+
+    .btn-secondary {
+        background: transparent;
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.5);
+    }
+
+    .btn-secondary:hover {
+        background: rgba(15, 23, 42, 0.4);
+        transform: translateY(-1px);
+    }
+
+    .hero-right-card {
+        background: rgba(15, 23, 42, 0.9);
+        border-radius: 18px;
+        padding: 18px 18px 16px 18px;
+        border: 1px solid rgba(148, 163, 184, 0.7);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+    }
+
+    .party-flag {
+        width: 130px;
+        height: auto;
+        border-radius: 50%;
+        margin: 0 auto 14px auto;
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.7);
+        border: 2px solid rgba(248, 250, 252, 0.9);
+    }
+
+    .hero-right-card h3 {
+        font-size: 15px;
+        margin-bottom: 6px;
+        text-align: center;
+    }
+
+    .hero-right-card p {
+        font-size: 13px;
+        opacity: 0.9;
+        text-align: center;
+    }
+
+    .hero-stats {
+        margin-top: 16px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .stat-box {
+        background: radial-gradient(circle at top, rgba(15, 23, 42, 0.95), rgba(31, 41, 55, 0.85));
+        border-radius: 14px;
+        padding: 10px 14px;
+        display: inline-flex;
+        flex-direction: column;
+        gap: 2px;
+        border: 1px solid rgba(148, 163, 184, 0.7);
+        min-width: 150px;
+        text-align: center;
+    }
+
+    .stat-label {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        opacity: 0.8;
+    }
+
+    .stat-value {
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    /* GENEL BÖLÜM BAŞLIKLARI */
+    section {
+        padding: 40px 0;
+    }
+
+    .section-header {
+        margin-bottom: 20px;
+    }
+
+    .section-label {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: #6b7280;
+        margin-bottom: 4px;
+    }
+
+    .section-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #111827;
+    }
+
+    .section-desc {
+        font-size: 14px;
+        color: #4b5563;
+        max-width: 720px;
+        margin-top: 4px;
+    }
+
+    .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .card {
+        background: #ffffff;
+        border-radius: 18px;
+        padding: 18px;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
+        transition: transform 0.12s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+        border-color: #d1d5db;
+    }
+
+    .card h3 {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .card p,
+    .card ul {
+        font-size: 14px;
+        color: #4b5563;
+    }
+
+    .card ul {
+        padding-left: 18px;
+        margin-top: 6px;
+    }
+
+    .card ul li + li {
+        margin-top: 4px;
+    }
+
+    /* ACCORDION */
+    .program-accordion {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .program-item {
+        border-radius: 14px;
+        border: 1px solid #e5e7eb;
+        background: #ffffff;
+        box-shadow: 0 10px 26px rgba(15, 23, 42, 0.04);
+        overflow: hidden;
+        transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+    }
+
+    .program-item.open {
+        transform: translateY(-1px);
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+        border-color: #2563eb;
+        background: #f9fafb;
+    }
+
+    .program-toggle {
+        width: 100%;
+        padding: 13px 16px;
+        background: linear-gradient(135deg, #0b3c5d 0%, #1d4ed8 50%, #0b3c5d 100%);
+        color: #f9fafb;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: left;
+    }
+
+    .program-toggle span:first-child {
+        flex: 1;
+    }
+
+    .program-icon {
+        font-weight: 700;
+        font-size: 16px;
+        opacity: 0.9;
+        transition: transform 0.15s ease;
+    }
+
+    .program-item.open .program-icon {
+        transform: rotate(45deg);
+    }
+
+    .program-panel {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 16px;
+        background: #f9fafb;
+        transition: max-height 0.25s ease, padding 0.25s ease;
+    }
+
+    .program-item.open .program-panel {
+        padding: 13px 16px 15px 16px;
+        max-height: 800px;
+    }
+
+    .program-panel p {
+        font-size: 14px;
+        color: #374151;
+        margin-bottom: 6px;
+    }
+
+    .program-panel ul {
+        font-size: 14px;
+        color: #4b5563;
+        padding-left: 18px;
+    }
+
+    .program-panel ul li + li {
+        margin-top: 3px;
+    }
+
+    /* TEŞKİLAT – atanmış görevliler listesi */
+    .teskilat-ilce-title {
+        font-weight: 600;
+    }
+
+    .teskilat-gorevli-list {
+        margin-top: 3px;
+        font-size: 12px;
+        color: #1d4ed8;
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .teskilat-gorevli-list li + li {
+        margin-top: 2px;
+    }
+
+    .teskilat-empty-note {
+        font-size: 14px;
+        color: #6b7280;
+        padding: 14px 16px;
+        border-radius: 14px;
+        background: #f3f4f6;
+        border: 1px dashed #d1d5db;
+    }
+
+    /* BAŞVURU / ÜYELİK FORMLARI */
+    .basvuru-section {
+        padding: 40px 0;
+    }
+
+    .basvuru-section form label {
+        display: block;
+        font-size: 13px;
+        margin-bottom: 3px;
+        color: #374151;
+        font-weight: 500;
+    }
+
+    .basvuru-section form input,
+    .basvuru-section form select,
+    .basvuru-section form textarea {
+        width: 100%;
+        padding: 8px 10px;
+        border-radius: 10px;
+        border: 1px solid #d1d5db;
+        font-size: 14px;
+        margin-bottom: 9px;
+        background: #f9fafb;
+        transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    .basvuru-section form input:focus,
+    .basvuru-section form select:focus,
+    .basvuru-section form textarea:focus {
+        border-color: #2563eb;
+        background: #ffffff;
+        box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.25);
+    }
+
+    .basvuru-section form textarea {
+        min-height: 100px;
+        resize: vertical;
+    }
+
+    .basvuru-section form button {
+        margin-top: 8px;
+        background: #d62828;
+        color: #ffffff;
+        border: none;
+        padding: 9px 18px;
+        border-radius: 999px;
+        font-size: 14px;
+        cursor: pointer;
+        font-weight: 600;
+        box-shadow: 0 10px 26px rgba(220, 38, 38, 0.4);
+        transition: transform 0.12s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    .basvuru-section form button:hover {
+        background: #b91c1c;
+        transform: translateY(-1px);
+        box-shadow: 0 14px 34px rgba(185, 28, 28, 0.55);
+    }
+
+    .basvuru-bilgi {
+        font-size: 13px;
+        color: #6b7280;
+        margin-top: 6px;
+    }
+
+    /* İLETİŞİM FORMU */
+    #iletisim .grid-2 {
+        align-items: flex-start;
+    }
+
+    form label {
+        display: block;
+        font-size: 13px;
+        margin-bottom: 3px;
+        color: #374151;
+    }
+
+    form input,
+    form select,
+    form textarea {
+        width: 100%;
+        padding: 8px 10px;
+        border-radius: 10px;
+        border: 1px solid #d1d5db;
+        font-size: 14px;
+        margin-bottom: 9px;
+        background: #f9fafb;
+        transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    form input:focus,
+    form select:focus,
+    form textarea:focus {
+        border-color: #2563eb;
+        background: #ffffff;
+        box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.25);
+    }
+
+    form textarea {
+        min-height: 100px;
+        resize: vertical;
+    }
+
+    form button {
+        background: #0b3c5d;
+        color: #ffffff;
+        border: none;
+        padding: 9px 16px;
+        border-radius: 999px;
+        font-size: 14px;
+        cursor: pointer;
+        font-weight: 600;
+        box-shadow: 0 10px 26px rgba(15, 23, 42, 0.45);
+        transition: transform 0.12s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    form button:hover {
+        background: #08273c;
+        transform: translateY(-1px);
+        box-shadow: 0 14px 34px rgba(15, 23, 42, 0.6);
+    }
+
+    /* FOOTER */
+    footer {
+        background: #0b3c5d;
+        color: #e5e7eb;
+        padding: 14px 0;
+        margin-top: 10px;
+        font-size: 12px;
+        border-top: 1px solid rgba(15, 23, 42, 0.9);
+    }
+
+    .footer-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    /* YÖNETİCİ GİRİŞ & PANEL MODALI */
+    .admin-modal-backdrop {
+        position: fixed;
+        inset: 0;
+        background: radial-gradient(circle at top, rgba(15, 23, 42, 0.72), rgba(0, 0, 0, 0.85));
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        padding: 16px;
+    }
+
+    .admin-modal-backdrop.is-open {
+        display: flex;
+    }
+
+    .admin-modal-dialog {
+        width: 100%;
+        max-width: 720px;
+        background: #ffffff;
+        border-radius: 22px;
+        padding: 20px 20px 18px 20px;
+        box-shadow: 0 26px 70px rgba(15, 23, 42, 0.55);
+        border: 1px solid #e5e7eb;
+        position: relative;
+        animation: modalFadeIn 0.18s ease-out;
+    }
+
+    @keyframes modalFadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px) scale(0.98);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    .admin-modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 10px;
+    }
+
+    .admin-modal-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #111827;
+    }
+
+    .admin-modal-sub {
+        font-size: 13px;
+        color: #4b5563;
+        margin-top: 4px;
+    }
+
+    .admin-modal-close {
+        border: none;
+        background: transparent;
+        font-size: 18px;
+        line-height: 1;
+        cursor: pointer;
+        color: #6b7280;
+        padding: 4px;
+    }
+
+    .admin-modal-close:hover {
+        color: #111827;
+    }
+
+    .admin-modal-footer {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .admin-modal-submit {
+        padding: 8px 16px;
+        border-radius: 999px;
+        border: none;
+        background: linear-gradient(135deg, #0b3c5d, #1d4ed8);
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 10px 26px rgba(15, 23, 42, 0.45);
+        transition: transform 0.12s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    .admin-modal-submit:hover {
+        background: linear-gradient(135deg, #08273c, #1d4ed8);
+        transform: translateY(-1px);
+        box-shadow: 0 14px 34px rgba(15, 23, 42, 0.6);
+    }
+
+    .admin-login-error {
+        font-size: 12px;
+        color: #b91c1c;
+        min-height: 16px;
+        margin-top: 4px;
+    }
+
+    .admin-panel-tag {
+        font-size: 11px;
+        padding: 3px 9px;
+        border-radius: 999px;
+        background: #eff6ff;
+        color: #1d4ed8;
+        border: 1px solid #bfdbfe;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        margin-top: 2px;
+    }
+
+    .admin-panel-simple-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px 16px;
+        margin-top: 6px;
+    }
+
+    .admin-panel-simple-grid label {
+        font-size: 12px;
+        color: #374151;
+        display: block;
+        margin-bottom: 2px;
+        font-weight: 500;
+    }
+
+    .admin-panel-simple-grid input,
+    .admin-panel-simple-grid select {
+        width: 100%;
+        padding: 7px 9px;
+        border-radius: 10px;
+        border: 1px solid #d1d5db;
+        font-size: 13px;
+        background: #f9fafb;
+        transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .admin-panel-simple-grid input:focus,
+    .admin-panel-simple-grid select:focus {
+        border-color: #2563eb;
+        background: #ffffff;
+        box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.25);
+    }
+
+    .admin-panel-simple-actions {
+        margin-top: 8px;
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .admin-panel-list {
+        margin-top: 10px;
+        padding-top: 8px;
+        border-top: 1px solid #e5e7eb;
+        max-height: 180px;
+        overflow-y: auto;
+        font-size: 12px;
+    }
+
+    .admin-panel-list ul {
+        list-style: disc;
+        padding-left: 16px;
+    }
+
+    .admin-panel-list li + li {
+        margin-top: 3px;
+    }
+
+    .admin-approve-btn,
+    .admin-delete-btn {
+        margin-left: 6px;
+        padding: 2px 7px;
+        border-radius: 999px;
+        font-size: 11px;
+        cursor: pointer;
+        border: 1px solid #e5e7eb;
+    }
+
+    .admin-approve-btn {
+        background: #dcfce7;
+        border-color: #bbf7d0;
+    }
+
+    .admin-approve-btn:hover {
+        background: #22c55e;
+        color: #022c22;
+        border-color: #16a34a;
+    }
+
+    .admin-delete-btn {
+        background: #f9fafb;
+    }
+
+    .admin-delete-btn:hover {
+        background: #fee2e2;
+        border-color: #fecaca;
+    }
+
+    .admin-application-note {
+        font-size: 11px;
+        color: #6b7280;
+    }
+
+    @media (max-width: 900px) {
+        .hero-inner {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .grid-2 {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        header {
+            position: static;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .top-bar {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        nav {
+            justify-content: flex-start;
+        }
+
+        .hero {
+            padding: 30px 0 40px 0;
+        }
+
+        .hero-title {
+            font-size: 24px;
+        }
+
+        .logo-wrap img {
+            width: 52px;
+            height: 52px;
+        }
+
+        .admin-panel-simple-grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .footer-flex {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+</style>
+</head>
+
+<body>
+<header>
+    <div class="container">
+        <div class="top-bar">
+            <div class="logo-wrap">
+                <!-- Amblem dosyasını aynı klasöre koy: parti-amblem.jpeg -->
+                <img src="parti-amblem.jpeg" alt="Türkiye Gençlik Partisi Amblem" />
+                <div class="logo-text">
+                    <span>Resmi Web Sitesi</span>
+                    <strong>TÜRKİYE GENÇLİK PARTİSİ</strong>
+                </div>
+            </div>
+            <nav>
+                <a href="#program">Parti Programı</a>
+                <a href="#kurucu">Kurucu</a>
+                <a href="#mevzuat">Mevzuat</a>
+                <!-- Teşkilat sekmesi kaldırıldı -->
+                <a href="#uye-ol">Teşkilat Başvurusu</a>
+                
+                <a href="#duyurular">Duyurular</a>
+                <a href="#iletisim">İletişim</a>
+                <a href="#" id="admin-link">Yönetici</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-inner">
+            <div>
+                <div class="hero-badges">
+                    <div class="badge">81 İl Teşkilatı</div>
+                    <div class="badge">Gençlik Odaklı Siyaset</div>
+                    <div class="badge">Dijital Katılım Modeli</div>
+                </div>
+                <h1 class="hero-title">Türkiye’nin Gençlik Gücüyle Yeni Bir Döneme Hazırız</h1>
+                <p class="hero-subtitle">
+                    TÜRKİYE GENÇLİK PARTİSİ, gençlerin enerjisini ve potansiyelini ülkenin geleceğine yönlendirmek için
+                    dijital, şeffaf ve katılımcı bir siyasi modeli Türkiye’ye sunar.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#program"><button class="btn btn-primary">Parti Programı</button></a>
+                    <a href="#teskilat"><button class="btn btn-secondary">Teşkilat Yapısı</button></a>
+                </div>
+            </div>
+            <div class="hero-right-card">
+                <!-- Bayrak dosyasını aynı klasöre koy: parti-bayrak.jpeg -->
+                <img src="parti-bayrak.jpeg" alt="Türkiye Gençlik Partisi Bayrağı" class="party-flag" />
+                <h3>Parti Kimliği</h3>
+                <p>
+                    Türkiye Gençlik Partisi’nin amblemi ve bayrağı; gençlik, üretim, bilim, özgürlük ve milli kimliği
+                    temsil eder. Gençlerin mühendislikten sanata, bilimden siyasete kadar tüm alanlarda Türkiye’nin
+                    geleceğini inşa etmesini simgeler.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-box">
+                        <span class="stat-label">Toplam Üye / Başvuru</span>
+                        <span class="stat-value" id="uye-sayisi">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PARTİ PROGRAMI -->
+<section id="program">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-label">Parti Programı</div>
+            <h2 class="section-title">Türkiye Gençlik Partisi – Temel Program</h2>
+            <p class="section-desc">
+                Gençlik merkezli devlet modeli, dijital demokrasi, üretim ve teknoloji odaklı ekonomi, fırsat eşitliği
+                sağlayan eğitim ve özgürlükleri güvence altına alan bir hukuk düzeni TGP programının temelini oluşturur.
+            </p>
+        </div>
+
+        <div class="program-accordion">
+            <article class="program-item">
+                <button class="program-toggle">
+                    <span>I. Yeni Türk Devlet Modeli</span>
+                    <span class="program-icon">+</span>
+                </button>
+                <div class="program-panel">
+                    <p>
+                        Türkiye Gençlik Partisi; devletin, vatandaşın asgari yaşam standartlarını güvence altına aldığı,
+                        gençlerin gelecek kaygısının azaltıldığı ve herkesin üretken bir işle buluşabildiği yeni bir devlet
+                        modelini savunur.
+                    </p>
+                    <ul>
+                        <li>Barınma, eğitim, sağlık ve istihdamda asgari standartların anayasal güvenceye kavuşturulması,</li>
+                        <li>Gençler için eğitimden işe geçişi kolaylaştıran, öngörülebilir bir kariyer ve istihdam planlaması,</li>
+                        <li>Devletin bürokratik hantallıktan uzak, verimliliği ve hizmet kalitesini önceleyen bir yapıya kavuşturulması.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="program-item">
+                <button class="program-toggle">
+                    <span>II. Doğrudan Demokrasi ve Temsil Reformu</span>
+                    <span class="program-icon">+</span>
+                </button>
+                <div class="program-panel">
+                    <p>
+                        Millet iradesinin yalnızca seçim günleriyle sınırlı kalmadığı, seçmenin temsilcileri üzerinde
+                        gerçek denetim gücüne sahip olduğu bir demokrasi anlayışı esas alınır.
+                    </p>
+                    <ul>
+                        <li>Milletvekili ve belediye başkanlarının, belirli bir seçmen çoğunluğu ile görevden geri çağrılabilmesi,</li>
+                        <li>Aday belirlemede kapalı liste sisteminin etkisini azaltan, şahıs bazlı tercih imkânı veren modeller,</li>
+                        <li>Milletvekilliği ve cumhurbaşkanlığı için dönem ve yaş sınırı getirerek sağlıklı kuşak yenilenmesi,</li>
+                        <li>Kritik konularda bağlayıcı veya danışma nitelikli halk oylaması mekanizmalarının yaygınlaştırılması.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="program-item">
+                <button class="program-toggle">
+                    <span>III. Şeffaf Devlet ve Hesap Verebilirlik</span>
+                    <span class="program-icon">+</span>
+                </button>
+                <div class="program-panel">
+                    <p>
+                        Kamu gücünü kullanan herkesin, millete karşı açık ve hesap verebilir olduğu bir yönetim kültürü
+                        kurumsallaştırılacaktır.
+                    </p>
+                    <ul>
+                        <li>Tüm bakanlık, belediye ve kamu kurumlarının; bütçe, ihale ve performans verilerini gerçek zamanlı
+                            dijital platformlarda yayımlaması,</li>
+                        <li>Milletvekilleri, belediye başkanları ve üst düzey kamu görevlilerinin düzenli mal varlığı beyanı,
+                            beyanların kamuya açık olması,</li>
+                        <li>Kamu malını zimmete geçirme, ağır nitelikli yolsuzluk ve rüşvet suçları için en ağır yaptırımların
+                            öngörülmesi,</li>
+                        <li>Yolsuzlukla mücadelede sivil toplum, medya ve bağımsız denetim kurumlarının etkin rol alması.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="program-item">
+                <button class="program-toggle">
+                    <span>IV. Ekonomi ve Üretim Modeli</span>
+                    <span class="program-icon">+</span>
+                </button>
+                <div class="program-panel">
+                    <p>
+                        Türkiye; ithalata bağımlı, tüketim odaklı yapıdan çıkarılarak, yüksek katma değerli ve teknoloji
+                        yoğun üretim ekonomisine dönüştürülecektir.
+                    </p>
+                    <ul>
+                        <li>Köylerin yalnızca tarım alanı değil; kırsal sanayi, gıda işleme, lojistik ve teknoloji tabanlı
+                            üretim merkezlerine dönüştürülmesi,</li>
+                        <li>Devletin; üniversiteler, meslek yüksekokulları ve özel sektör arasında kalıcı istihdam eşleştirme
+                            platformları kurması,</li>
+                        <li>Gençler için meslek edinme + istihdam garantili programlar ve bölgesel teşvik paketleri,</li>
+                        <li>Köyden kente zorunlu göçü azaltan, dengeli ve sürdürülebilir kalkınma modeli.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="program-item">
+                <button class="program-toggle">
+                    <span>V. Şehircilik ve Konut Reformu</span>
+                    <span class="program-icon">+</span>
+                </button>
+                <div class="program-panel">
+                    <p>
+                        Dikey ve plansız yapılaşma yerine; güvenli, sağlıklı, yeşil alanı bol, yatay ve insan odaklı
+                        yerleşim modeli esas alınacaktır.
+                    </p>
+                    <ul>
+                        <li>Dar ve orta gelirli vatandaşlar için devlet destekli, altyapısı tamamlanmış müstakil veya bahçeli
+                            konut projeleri,</li>
+                        <li>Ulaşım, yeşil alan, eğitim, sağlık ve sosyal donatıların birlikte planlandığı bütüncül şehircilik
+                            anlayışı,</li>
+                        <li>Deprem ve afet riskine göre zorunlu kentsel dönüşüm öncelikleri,</li>
+                        <li>Şehirleri beton yığınları olmaktan çıkarıp, nitelikli yaşam alanlarına dönüştüren tasarım ilkeleri.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="program-item">
+                <button class="program-toggle">
+                    <span>VI. Eğitim Reformu</span>
+                    <span class="program-icon">+</span>
+                </button>
+                <div class="program-panel">
+                    <p>
+                        Eğitim sistemi; tek sınav merkezli baskıcı yapıdan çıkarılıp, hayat boyu öğrenme ve yetenek geliştirmeyi
+                        esas alan adil bir modele dönüştürülecektir.
+                    </p>
+                    <ul>
+                        <li>Teknik liseler ve meslek yüksekokullarının bütünleştirilerek, başarılı mezunlara ilgili lisans
+                            programlarının 3. sınıfına geçiş hakkı tanınması,</li>
+                        <li>Üniversiteye geçiş sınavının yıl içinde dört oturum şeklinde yapılarak fırsat eşitliğinin artırılması,</li>
+                        <li>Öğrencilere barınma, beslenme, ulaşım ve eğitim materyali desteği ile maddi engellerin kaldırılması,</li>
+                        <li>Eleştirel düşünme, bilimsel yöntem, yabancı dil ve dijital yetkinliklerin merkeze alındığı müfredat.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="program-item">
+                <button class="program-toggle">
+                    <span>VII. Teknoloji, AR-GE ve Uzay Programı</span>
+                    <span class="program-icon">+</span>
+                </button>
+                <div class="program-panel">
+                    <p>
+                        Türkiye’nin uzun vadeli güvenliği ve refahı için teknoloji, savunma ve uzay alanlarında
+                        tam bağımsızlık hedeflenmektedir.
+                    </p>
+                    <ul>
+                        <li>Millî seyir ve konumlama sistemleri, yerli harita ve coğrafi bilgi altyapısının geliştirilmesi,</li>
+                        <li>Bağımsız atış kontrol çözümleri, sensör ağları ve karar destek sistemlerinin millîleştirilmesi,</li>
+                        <li>Yörünge uyduları, yüksek çözünürlüklü gözlem sistemleri ve insansız hava-uzay araçları için
+                            güçlü bir ulusal uzay programı,</li>
+                        <li>Üniversiteler, teknoparklar ve özel sektörle entegre çalışan ulusal Ar-Ge ekosistemi.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="program-item">
+                <button class="program-toggle">
+                    <span>VIII. Ulusal Güvenlik Doktrini</span>
+                    <span class="program-icon">+</span>
+                </button>
+                <div class="program-panel">
+                    <p>
+                        Ulusal güvenlik stratejisi; savunma sanayiinde tam bağımsızlık, terörle kararlı mücadele ve
+                        kamu vicdanını önceleyen adalet ilkeleri üzerine kurulacaktır.
+                    </p>
+                    <ul>
+                        <li>Radar, elektronik harp, haberleşme, füze-roket ve komuta-kontrol altyapısında yabancı bağımlılığın
+                            asgariye indirilmesi, kritik sistemlerde tamamen ortadan kaldırılması,</li>
+                        <li>Terör suçlarında genel af uygulamasına son verilmesi, ceza indirimi alanlarının daraltılması,</li>
+                        <li>Toplumda derin huzursuzluk yaratan güvenlik kararlarında zorunlu halk oylaması mekanizması,</li>
+                        <li>Hudut, deniz ve siber güvenlik alanlarında genç uzmanlara kariyer imkânı sağlayan programlar.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="program-item">
+                <button class="program-toggle">
+                    <span>IX. Adalet ve Yönetim Ahlakı</span>
+                    <span class="program-icon">+</span>
+                </button>
+                <div class="program-panel">
+                    <p>
+                        Yargı sistemine güvenin yeniden inşası ve kamu yönetiminde ahlaki standartların yükseltilmesi temel
+                        önceliktir.
+                    </p>
+                    <ul>
+                        <li>Yargı süreçlerinin hızlandırılması; aynı zamanda savunma hakkı ve adil yargılanma ilkesinin
+                            eksiksiz korunması,</li>
+                        <li>Üst düzey kamu görevleri için mesleki yeterlilik, etik sicil ve şeffaflık kriterlerinin zorunlu
+                            hâle getirilmesi,</li>
+                        <li>Ciddi yolsuzluk veya etik ihlal iddialarında tarafsız inceleme kurullarının hızlıca devreye girmesi,</li>
+                        <li>Toplumda güven kaybına yol açan hiçbir yöneticinin görevde kalmaya devam etmemesi.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="program-item">
+                <button class="program-toggle">
+                    <span>X. Akil İnsanlar Kurulu</span>
+                    <span class="program-icon">+</span>
+                </button>
+                <div class="program-panel">
+                    <p>
+                        Günlük politik çekişmelerin ötesinde, Türkiye’nin uzun vadeli çıkarlarını bilimsel ve stratejik
+                        bakışla değerlendiren bir üst danışma mekanizması kurulacaktır.
+                    </p>
+                    <ul>
+                        <li>Mühendisler, bilim insanları, hukukçular, iktisatçılar ve güvenlik uzmanlarından oluşan,
+                            üyeleri doğrudan halk tarafından seçilen bir Akil İnsanlar Kurulu,</li>
+                        <li>Kurul kararlarının bağlayıcı olmamakla birlikte; cumhurbaşkanı, hükümet ve TBMM için zorunlu
+                            danışma niteliği taşıması,</li>
+                        <li>Stratejik konularda bilimsel veriye dayalı, şeffaf ve gerekçeli görüş raporlarının yayımlanması,</li>
+                        <li>Genç uzmanların da dâhil edileceği çalışma komisyonları ile sürekli istişare kültürünün
+                            kurumsallaştırılması.</li>
+                    </ul>
+                </div>
+            </article>
+        </div>   </article>
+        </div>
+    </div>
+</section>
+
+
+<!-- TEŞKİLAT – SADECE ATANMIŞ GÖREVLİLER -->
+<section id="teskilat">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-label">Teşkilat</div>
+            <h2 class="section-title">Atanmış İl ve İlçe Teşkilat Görevlileri</h2>
+            <p class="section-desc">
+                Bu listede yalnızca <strong>yönetici panelinden atanmış</strong> il ve ilçe teşkilat görevlileri
+                görüntülenir. Demo sürümünde tüm illeri, ilçeleri ve çeşitli pozisyonları kapsayan yaklaşık
+                <strong>300 kişilik</strong> bir örnek data seti otomatik olarak oluşturulmaktadır.
+            </p>
+        </div>
+
+        <div class="program-accordion" id="teskilat-liste">
+            <!-- JavaScript, sadece ataması yapılmış il / ilçe kombinasyonlarını burada gösterecek -->
+        </div>
+    </div>
+</section>
+
+<!-- TEŞKİLAT GÖREV BAŞVURU FORMU -->
+<section id="uye-ol" class="basvuru-section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-label">Teşkilat Başvurusu</div>
+            <h2 class="section-title">Teşkilat Görev Başvuru Formu</h2>
+            <p class="section-desc">
+                Türkiye Gençlik Partisi il ve ilçe teşkilatlarında gönüllü veya yönetici olarak görev almak için
+                aşağıdaki formu doldurabilirsiniz. Başvurular yönetici paneline düşer ve onaylandığında yukarıdaki
+                teşkilat listesinde adınız ve göreviniz görünür.
+            </p>
+        </div>
+
+        <div class="grid-2">
+            <div>
+                <form id="basvuru-form">
+                    <label for="bf-adsoyad">Ad Soyad *</label>
+                    <input id="bf-adsoyad" name="adsoyad" type="text" required />
+
+                    <label for="bf-tc">TC Kimlik No *</label>
+                    <input id="bf-tc" name="tc" type="text" maxlength="11" inputmode="numeric" required />
+
+                    <label for="bf-dogum">Doğum Tarihi *</label>
+                    <input id="bf-dogum" name="dogum" type="date" required />
+
+                    <label for="bf-telefon">Telefon *</label>
+                    <input id="bf-telefon" name="telefon" type="tel" required />
+
+                    <label for="bf-email">E-posta *</label>
+                    <input id="bf-email" name="email" type="email" required />
+
+                    <label for="bf-il">Görev Almak İstediğiniz İl *</label>
+                    <select id="bf-il" name="il" required>
+                        <option value="">İl seçiniz</option>
+                    </select>
+
+                    <label for="bf-ilce">Görev Almak İstediğiniz İlçe</label>
+                    <select id="bf-ilce" name="ilce">
+                        <option value="">Önce il seçiniz</option>
+                    </select>
+
+                    <label for="bf-pozisyon">Talep Ettiğiniz Görev / Pozisyon *</label>
+                    <select id="bf-pozisyon" name="pozisyon" required>
+                        <option value="">Seçiniz</option>
+                        <option value="İl Başkanı">İl Başkanı</option>
+                        <option value="İlçe Başkanı">İlçe Başkanı</option>
+                        <option value="İl Yönetim Kurulu Üyesi">İl Yönetim Kurulu Üyesi</option>
+                        <option value="İlçe Yönetim Kurulu Üyesi">İlçe Yönetim Kurulu Üyesi</option>
+                        <option value="Gençlik Kolları Başkanı">Gençlik Kolları Başkanı</option>
+                        <option value="Gençlik Kolları Üyesi">Gençlik Kolları Üyesi</option>
+                        <option value="Kadın Kolları Başkanı">Kadın Kolları Başkanı</option>
+                        <option value="Kadın Kolları Üyesi">Kadın Kolları Üyesi</option>
+                        <option value="Mahalle Temsilcisi">Mahalle Temsilcisi</option>
+                        <option value="Sandık Görevlisi">Sandık Görevlisi</option>
+                        <option value="Basın ve Tanıtım">Basın ve Tanıtım</option>
+                        <option value="Hukuk Komisyonu">Hukuk Komisyonu</option>
+                        <option value="Seçim Koordinasyon Merkezi">Seçim Koordinasyon Merkezi</option>
+                        <option value="Gönüllü Çalışan">Gönüllü Çalışan</option>
+                        <option value="Genel Üye">Genel Üye</option>
+                    </select>
+
+                    <label for="bf-egitim">Eğitim Durumu *</label>
+                    <select id="bf-egitim" name="egitim" required>
+                        <option value="">Seçiniz</option>
+                        <option value="lise-devam">Lise (Devam)</option>
+                        <option value="lise-mezun">Lise Mezunu</option>
+                        <option value="onlisans">Önlisans</option>
+                        <option value="lisans">Lisans</option>
+                        <option value="yuksek-lisans">Yüksek Lisans</option>
+                        <option value="doktora">Doktora</option>
+                    </select>
+
+                    <label for="bf-adres">İkamet Adresi *</label>
+                    <textarea id="bf-adres" name="adres" required></textarea>
+
+                    <label for="bf-aciklama">Kendinizi Kısaca Tanıtın / Motivasyon</label>
+                    <textarea id="bf-aciklama" name="aciklama" placeholder="Teşkilatta görev almak isteme nedeniniz, deneyimleriniz vb."></textarea>
+
+                    <div style="margin:6px 0 10px 0; font-size:12px; color:#374151;">
+                        <label style="display:flex; align-items:flex-start; gap:6px; cursor:pointer;">
+                            <input type="checkbox" id="bf-kvkk" name="kvkk" style="margin-top:3px;" required />
+                            <span>
+                                6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında hazırlanmış
+                                <strong><a href="#" id="kvkk-aydinlatma-link" style="color:#1d4ed8;text-decoration:underline;">Kişisel Verilerin İşlenmesine İlişkin Aydınlatma Metni</a></strong>’ni okudum,
+                                anladım ve kişisel verilerimin bu metin çerçevesinde işlenmesini, saklanmasını ve
+                                gerekli mercilerle paylaşılmasını <strong>kabul ediyorum</strong>.
+                            </span>
+                        </label>
+                    </div>
+
+                    <button type="submit">Görev Başvurumu Gönder</button>
+                </form>
+                <p id="basvuru-sonuc" class="basvuru-bilgi"></p>
+            </div>
+            <div>
+                <div class="card">
+                    <h3>Başvuru Süreci Nasıl İşler?</h3>
+                    <ul>
+                        <li>Formu doldurduğunuzda başvurunuz bu cihazda yerel olarak saklanır ve yönetici paneline eklenir.</li>
+                        <li>Yetkili yönetici panelden başvurunuzu inceler, uygun görürse onaylar.</li>
+                        <li>Onaylanan başvurular, görevli olarak atanır ve yukarıdaki <strong>Teşkilat</strong> bölümünde
+                            ilgili il / ilçe altında adınız ve göreviniz görünür.</li>
+                        <li>Bu demo sürümünde hiçbir bilgi sunucuya gönderilmez; tüm veriler sadece tarayıcınızın
+                            <em>localStorage</em> alanında tutulur.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- KURUCU -->
+<section id="kurucu">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-label">Kurucu</div>
+            <h2 class="section-title">Türkiye Gençlik Partisi Kurucu Bilgileri</h2>
+            <p class="section-desc">
+                Türkiye Gençlik Partisi’nin kuruluş sürecinde görev alan kurucu kadro, gençlik odaklı yeni bir siyaset
+                anlayışını hayata geçirmek amacıyla bir araya gelmiş kişilerden oluşur. Bu alan, partinin resmî kuruluş
+                işlemleri tamamlandığında kurucu genel başkan ve kurucu üyelerin bilgileriyle güncellenecektir.
+            </p>
+        </div>
+        <div class="card">
+            <h3>Kurucu Kadro Hakkında</h3>
+            <p>
+                Bu bölümde; kurucu genel başkan, kurucu yönetim kurulu üyeleri ve partinin kuruluş bildirgesine yön veren
+                temel ilkeler yer alacaktır. Kuruluş işlemleri resmî olarak tamamlandığında, Yargıtay Cumhuriyet
+                Başsavcılığı nezdindeki kayıtlarla uyumlu bilgiler kamuoyu ile paylaşılacaktır.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- MEVZUAT -->
+<section id="mevzuat">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-label">Mevzuat</div>
+            <h2 class="section-title">Temel Hukuki Dayanaklar ve Parti Belgeleri</h2>
+            <p class="section-desc">
+                Türkiye Gençlik Partisi’nin faaliyetleri; Türkiye Cumhuriyeti Anayasası, Siyasi Partiler Kanunu ve ilgili
+                mevzuat çerçevesinde yürütülür. Aşağıdaki PDF dosyalarına tıklayarak, söz konusu metinleri ayrı bir
+                pencerede görüntüleyebilirsiniz.
+            </p>
+        </div>
+
+        <div class="grid-2">
+            <div class="card">
+                <h3>1. Türkiye Cumhuriyeti Anayasası (PDF)</h3>
+                <p>
+                    Türkiye Cumhuriyeti’nin temel yapısını, devlet organlarının görev ve yetkilerini, temel hak ve özgürlükleri
+                    düzenleyen ana hukuk metni.
+                </p>
+                <p style="margin-top:8px;">
+                    <a href="anayasa.pdf" target="_blank" rel="noopener" class="btn btn-primary">
+                        Anayasayı Aç (PDF)
+                    </a>
+                </p>
+            </div>
+            <div class="card">
+                <h3>2. Siyasi Partiler Kanunu (PDF)</h3>
+                <p>
+                    Siyasi partilerin kuruluş, faaliyet, denetim ve kapatılma usullerini belirleyen temel kanun.
+                </p>
+                <p style="margin-top:8px;">
+                    <a href="siyasi-partiler-kanunu.pdf" target="_blank" rel="noopener" class="btn btn-primary">
+                        Siyasi Partiler Kanununu Aç (PDF)
+                    </a>
+                </p>
+            </div>
+            <div class="card">
+                <h3>3. Türkiye Gençlik Partisi Tüzüğü (PDF)</h3>
+                <p>
+                    Partinin iç işleyişini, organlarını, üyelik esaslarını, teşkilat yapısını ve karar alma süreçlerini
+                    düzenleyen temel iç mevzuat belgesidir.
+                </p>
+                <p style="margin-top:8px;">
+                    <a href="tgp-tuzuk.pdf" target="_blank" rel="noopener" class="btn btn-primary">
+                        TGP Tüzüğünü Aç (PDF)
+                    </a>
+                </p>
+            </div>
+            <div class="card">
+                <h3>4. Türkiye Gençlik Partisi Detaylı Programı (PDF)</h3>
+                <p>
+                    Türkiye Gençlik Partisi’nin yeni devlet modeli, demokrasi, ekonomi, eğitim, teknoloji, güvenlik ve
+                    toplumsal yaşam alanlarındaki ayrıntılı hedef ve politikalarını içeren kapsamlı program belgesidir.
+                </p>
+                <p style="margin-top:8px;">
+                    <a href="tgp-detayli-program.pdf" target="_blank" rel="noopener" class="btn btn-primary">
+                        Detaylı Programı Aç (PDF)
+                    </a>
+                </p>
+            </div>
+            <div class="card">
+                <h3>5. Türkiye Gençlik Partisi Kuruluş Dosyası (PDF)</h3>
+                <p>
+                    Partinin resmî kuruluşuna ilişkin belgeleri, kurucu üyeler listesini, kuruluş tutanağını ve Yargıtay
+                    Cumhuriyet Başsavcılığı’na sunulan evrakları içeren dosyadır.
+                </p>
+                <p style="margin-top:8px;">
+                    <a href="tgp-kurulus-dosyasi.pdf" target="_blank" rel="noopener" class="btn btn-primary">
+                        Kuruluş Dosyasını Aç (PDF)
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- DUYURULAR -->
+<section id="duyurular">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-label">Duyurular</div>
+            <h2 class="section-title">Güncel Duyurular</h2>
+            <p class="section-desc">
+                Parti etkinlikleri, toplantılar ve basın açıklamaları bu bölümde paylaşılacaktır.
+            </p>
+        </div>
+
+        <div class="grid-2">
+            <div class="card">
+                <h3>Gençlik Çalıştayı – Ankara</h3>
+                <p>
+                    Gençlik politikalarının tartışıldığı çalıştay serilerimizin ilki Ankara’da gerçekleştirilecektir.
+                    Tarih ve detaylar yakında açıklanacaktır.
+                </p>
+            </div>
+            <div class="card">
+                <h3>Dijital Katılım Platformu</h3>
+                <p>
+                    Parti programı ve yerel politikalar hakkında görüşlerinizi iletebileceğiniz dijital platform kısa süre
+                    içinde kullanıma açılacaktır.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- İLETİŞİM -->
+<section id="iletisim">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-label">İletişim</div>
+            <h2 class="section-title">Genel Merkez ile İletişim</h2>
+            <p class="section-desc">
+                Görüş, öneri ve taleplerinizi aşağıdaki form aracılığıyla iletebilirsiniz. Bu form demo amaçlıdır, veriler
+                yalnızca tarayıcınızda saklanır.
+            </p>
+        </div>
+
+        <div class="grid-2">
+            <div>
+                <form id="iletisim-form">
+                    <label for="iletisim-ad">Adınız Soyadınız</label>
+                    <input id="iletisim-ad" type="text" required />
+
+                    <label for="iletisim-email">E-posta</label>
+                    <input id="iletisim-email" type="email" required />
+
+                    <label for="iletisim-konu">Konu</label>
+                    <input id="iletisim-konu" type="text" required />
+
+                    <label for="iletisim-mesaj">Mesajınız</label>
+                    <textarea id="iletisim-mesaj" required></textarea>
+
+                    <button type="submit">Mesajı Gönder (Demo)</button>
+                </form>
+            </div>
+            <div>
+                <div class="card">
+                    <h3>Genel Merkez</h3>
+                    <p>
+                        Türkiye Gençlik Partisi Genel Merkez adresi ve iletişim bilgileri kurumsal süreçler tamamlandığında
+                        burada yayınlanacaktır.
+                    </p>
+                    <ul>
+                        <li>E-posta: info@turkiyegenclikpartisi.org (örnek)</li>
+                        <li>Telefon: +90 (312) 000 00 00 (örnek)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- YÖNETİCİ GİRİŞ MODALI -->
+<div class="admin-modal-backdrop" id="admin-login-modal" aria-hidden="true">
+    <div class="admin-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="admin-login-title">
+        <div class="admin-modal-header">
+            <div>
+                <div class="admin-modal-title" id="admin-login-title">Yönetici Girişi</div>
+                <div class="admin-modal-sub">
+                    Yönetici paneline erişmek için kullanıcı adı ve şifrenizi giriniz.
+                </div>
+            </div>
+            <button type="button" class="admin-modal-close" id="admin-login-close" aria-label="Kapat">×</button>
+        </div>
+        <form id="admin-login-form">
+            <label for="admin-username">Kullanıcı Adı</label>
+            <input id="admin-username" type="text" autocomplete="username" />
+
+            <label for="admin-password">Şifre</label>
+            <input id="admin-password" type="password" autocomplete="current-password" />
+
+            <div class="admin-modal-footer">
+                <div>
+                    <div class="admin-login-error" id="admin-login-error"></div>
+                </div>
+                <button type="submit" class="admin-modal-submit">Giriş Yap</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- YÖNETİCİ PANEL MODALI -->
+<div class="admin-modal-backdrop" id="admin-panel-modal" aria-hidden="true">
+    <div class="admin-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="admin-panel-title">
+        <div class="admin-modal-header">
+            <div>
+                <div class="admin-modal-title" id="admin-panel-title">Yönetici Paneli</div>
+                <div class="admin-modal-sub">
+                    Bu panel yalnızca yetkili yöneticiler içindir. Atama ve başvuru bilgileriniz bu cihazda yerel olarak
+                    tutulur (demo).
+                </div>
+            </div>
+            <button type="button" class="admin-modal-close" id="admin-panel-close" aria-label="Kapat">×</button>
+        </div>
+
+        <div class="admin-panel-tag">
+            Yerel demo • Toplam atama: <span id="admin-panel-uye-count">0</span>
+        </div>
+
+        <div class="admin-panel-simple-grid" style="margin-top: 10px;">
+            <div>
+                <label>İsim Soyisim</label>
+                <input id="admin-panel-isim" placeholder="Örn: Ahmet Yılmaz" />
+                <label>Pozisyon</label>
+                <select id="admin-panel-pozisyon">
+                    <option value="">Seçiniz</option>
+                    <option value="İl Başkanı">İl Başkanı</option>
+                    <option value="İlçe Başkanı">İlçe Başkanı</option>
+                    <option value="İl Yönetim Kurulu Üyesi">İl Yönetim Kurulu Üyesi</option>
+                    <option value="İlçe Yönetim Kurulu Üyesi">İlçe Yönetim Kurulu Üyesi</option>
+                    <option value="Gençlik Kolları Başkanı">Gençlik Kolları Başkanı</option>
+                    <option value="Gençlik Kolları Üyesi">Gençlik Kolları Üyesi</option>
+                    <option value="Kadın Kolları Başkanı">Kadın Kolları Başkanı</option>
+                    <option value="Kadın Kolları Üyesi">Kadın Kolları Üyesi</option>
+                    <option value="Mahalle Temsilcisi">Mahalle Temsilcisi</option>
+                    <option value="Sandık Görevlisi">Sandık Görevlisi</option>
+                    <option value="Basın ve Tanıtım">Basın ve Tanıtım</option>
+                    <option value="Hukuk Komisyonu">Hukuk Komisyonu</option>
+                    <option value="Seçim Koordinasyon Merkezi">Seçim Koordinasyon Merkezi</option>
+                    <option value="Gönüllü Çalışan">Gönüllü Çalışan</option>
+                    <option value="Genel Üye">Genel Üye</option>
+                </select>
+            </div>
+            <div>
+                <label>İl</label>
+                <select id="admin-panel-il">
+                    <option value="">İl seçiniz</option>
+                </select>
+                <label>İlçe</label>
+                <input id="admin-panel-ilce" placeholder="Örn: Çankaya (İl Teşkilatı için boş bırakabilirsiniz)" />
+            </div>
+        </div>
+
+        <div class="admin-panel-simple-actions">
+            <button type="button" class="admin-modal-submit" id="admin-panel-kaydet">Atamayı Kaydet</button>
+            <button type="button" id="admin-panel-temizle"
+                    style="border:none;background:transparent;font-size:11px;color:#6b7280;cursor:pointer;">
+                Tüm atama kayıtlarını sil
+            </button>
+        </div>
+
+        <div class="admin-panel-list">
+            <strong>Kayıtlı Atamalar:</strong>
+            <ul id="admin-panel-list"></ul>
+        </div>
+
+        <div class="admin-panel-list" style="margin-top: 12px;">
+            <strong>Bekleyen Başvurular:</strong>
+            <ul id="admin-panel-applications"></ul>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="footer-flex">
+            <div>© Türkiye Gençlik Partisi – Demo Web Sitesi</div>
+            <div>
+                <span>81 İl Teşkilatı Vizyonu</span>
+            </div>
+        </div>
+    </div>
+
+<div class="admin-modal-backdrop" id="kvkk-aydinlatma-modal" aria-hidden="true">
+    <div class="admin-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="kvkk-aydinlatma-title">
+        <div class="admin-modal-header">
+            <div>
+                <div class="admin-modal-title" id="kvkk-aydinlatma-title">Kişisel Verilerin İşlenmesine İlişkin Aydınlatma Metni</div>
+                <div class="admin-modal-sub">
+                    Bu metin, Türkiye Gençlik Partisi’ne yaptığınız başvuru kapsamında kişisel verilerinizin işlenmesine
+                    ilişkin temel bilgilendirmeyi içermektedir.
+                </div>
+            </div>
+            <button type="button" class="admin-modal-close" id="kvkk-aydinlatma-close" aria-label="Kapat">×</button>
+        </div>
+        <div style="font-size:13px;color:#374151;max-height:320px;overflow-y:auto;">
+            <p><strong>Veri Sorumlusu:</strong> Türkiye Gençlik Partisi (TGP), teşkilat yapılanması ve üyelik süreçlerinin yürütülmesi amacıyla
+                kişisel verilerinizi 6698 sayılı Kişisel Verilerin Korunması Kanunu (“KVKK”) kapsamında veri sorumlusu sıfatıyla işlemektedir.</p>
+            <p style="margin-top:8px;"><strong>İşlenen Kişisel Veriler:</strong> Kimlik bilgileriniz (ad-soyad, T.C. kimlik numarası, doğum tarihi),
+                iletişim bilgileriniz (telefon, e-posta, adres), görev ve eğitim bilgileri ile başvuru formunda beyan ettiğiniz diğer bilgileriniz
+                işlenebilmektedir.</p>
+            <p style="margin-top:8px;"><strong>İşleme Amaçları:</strong> Başvurunuzun değerlendirilmesi, teşkilat yapılanmasının planlanması,
+                sizinle iletişime geçilmesi, parti içi istatistiksel analizlerin yapılması ve hukuki yükümlülüklerin yerine getirilmesi
+                amaçlarıyla kişisel verileriniz işlenmektedir.</p>
+            <p style="margin-top:8px;"><strong>Toplama Yöntemi ve Hukuki Sebep:</strong> Verileriniz; başvuru formu, dijital platformlar ve benzeri
+                kanallar aracılığıyla, başvurunuzu tamamlamanız için gerekli olan <em>açık rızanıza</em> ve KVKK’nın 5. ve 6. maddelerinde belirtilen
+                hukuki sebeplere dayanılarak toplanmakta ve işlenmektedir.</p>
+            <p style="margin-top:8px;"><strong>Aktarım:</strong> Kişisel verileriniz, kanunen yetkili kamu kurum ve kuruluşları ile yasal
+                zorunluluklar çerçevesinde ve yalnızca gerekli olduğu ölçüde paylaşılabilir. Bunun dışında üçüncü kişilerle paylaşım yapılması
+                halinde, ilgili mevzuata uygun hareket edilecektir.</p>
+            <p style="margin-top:8px;"><strong>Haklarınız:</strong> KVKK’nın 11. maddesi uyarınca; kişisel verilerinizin işlenip işlenmediğini öğrenme,
+                işlenmişse buna ilişkin bilgi talep etme, düzeltilmesini veya silinmesini isteme, eksik veya yanlış işlenmiş olması hâlinde
+                düzeltilmesini talep etme, işleme faaliyetinin sınırlandırılmasını isteme ve kanuna aykırı işlendiğini düşünürseniz ilgili
+                mercilere şikâyette bulunma haklarına sahipsiniz.</p>
+            <p style="margin-top:8px;">
+                Başvuru ve bilgi taleplerinizi, ileride partinin resmî iletişim kanalları ve internet sitesi üzerinden açıklanacak başvuru
+                yöntemlerini kullanarak iletebilirsiniz.
+            </p>
+        </div>
+    </div>
+</div>
+</footer>
+
+<script>
+    // 81 il için temel veriler (kod + il adı)
+    const teskilatData = [
+        { kod: "01", il: "Adana" },
+        { kod: "02", il: "Adıyaman" },
+        { kod: "03", il: "Afyonkarahisar" },
+        { kod: "04", il: "Ağrı" },
+        { kod: "05", il: "Amasya" },
+        { kod: "06", il: "Ankara" },
+        { kod: "07", il: "Antalya" },
+        { kod: "08", il: "Artvin" },
+        { kod: "09", il: "Aydın" },
+        { kod: "10", il: "Balıkesir" },
+        { kod: "11", il: "Bilecik" },
+        { kod: "12", il: "Bingöl" },
+        { kod: "13", il: "Bitlis" },
+        { kod: "14", il: "Bolu" },
+        { kod: "15", il: "Burdur" },
+        { kod: "16", il: "Bursa" },
+        { kod: "17", il: "Çanakkale" },
+        { kod: "18", il: "Çankırı" },
+        { kod: "19", il: "Çorum" },
+        { kod: "20", il: "Denizli" },
+        { kod: "21", il: "Diyarbakır" },
+        { kod: "22", il: "Edirne" },
+        { kod: "23", il: "Elazığ" },
+        { kod: "24", il: "Erzincan" },
+        { kod: "25", il: "Erzurum" },
+        { kod: "26", il: "Eskişehir" },
+        { kod: "27", il: "Gaziantep" },
+        { kod: "28", il: "Giresun" },
+        { kod: "29", il: "Gümüşhane" },
+        { kod: "30", il: "Hakkari" },
+        { kod: "31", il: "Hatay" },
+        { kod: "32", il: "Isparta" },
+        { kod: "33", il: "Mersin" },
+        { kod: "34", il: "İstanbul" },
+        { kod: "35", il: "İzmir" },
+        { kod: "36", il: "Kars" },
+        { kod: "37", il: "Kastamonu" },
+        { kod: "38", il: "Kayseri" },
+        { kod: "39", il: "Kırklareli" },
+        { kod: "40", il: "Kırşehir" },
+        { kod: "41", il: "Kocaeli" },
+        { kod: "42", il: "Konya" },
+        { kod: "43", il: "Kütahya" },
+        { kod: "44", il: "Malatya" },
+        { kod: "45", il: "Manisa" },
+        { kod: "46", il: "Kahramanmaraş" },
+        { kod: "47", il: "Mardin" },
+        { kod: "48", il: "Muğla" },
+        { kod: "49", il: "Muş" },
+        { kod: "50", il: "Nevşehir" },
+        { kod: "51", il: "Niğde" },
+        { kod: "52", il: "Ordu" },
+        { kod: "53", il: "Rize" },
+        { kod: "54", il: "Sakarya" },
+        { kod: "55", il: "Samsun" },
+        { kod: "56", il: "Siirt" },
+        { kod: "57", il: "Sinop" },
+        { kod: "58", il: "Sivas" },
+        { kod: "59", il: "Tekirdağ" },
+        { kod: "60", il: "Tokat" },
+        { kod: "61", il: "Trabzon" },
+        { kod: "62", il: "Tunceli" },
+        { kod: "63", il: "Şanlıurfa" },
+        { kod: "64", il: "Uşak" },
+        { kod: "65", il: "Van" },
+        { kod: "66", il: "Yozgat" },
+        { kod: "67", il: "Zonguldak" },
+        { kod: "68", il: "Aksaray" },
+        { kod: "69", il: "Bayburt" },
+        { kod: "70", il: "Karaman" },
+        { kod: "71", il: "Kırıkkale" },
+        { kod: "72", il: "Batman" },
+        { kod: "73", il: "Şırnak" },
+        { kod: "74", il: "Bartın" },
+        { kod: "75", il: "Ardahan" },
+        { kod: "76", il: "Iğdır" },
+        { kod: "77", il: "Yalova" },
+        { kod: "78", il: "Karabük" },
+        { kod: "79", il: "Kilis" },
+        { kod: "80", il: "Osmaniye" },
+        { kod: "81", il: "Düzce" }
+    ];
+
+
+    // İl/İlçe dropdownları için yardımcı fonksiyonlar
+    // İl dropdownlarını dolduran fonksiyon
+    function populateIlSelect(selectId) {
+        const sel = document.getElementById(selectId);
+        if (!sel) return;
+        // Mevcut seçenekleri (ilk placeholder hariç) temizle
+        while (sel.options.length > 1) {
+            sel.remove(1);
+        }
+        teskilatData.forEach(item => {
+            const opt = document.createElement('option');
+            opt.value = item.il;
+            opt.textContent = item.il;
+            sel.appendChild(opt);
+        });
+    }
+
+    // Her il için gerçek ilçe listesi (örnek: 5 ilçe)
+    const ilcelerByIl = {
+        "Adana": ["Seyhan", "Yüreğir", "Çukurova", "Sarıçam", "Ceyhan"],
+        "Adıyaman": ["Merkez", "Kahta", "Besni", "Gölbaşı", "Gerger"],
+        "Afyonkarahisar": ["Merkez", "Sandıklı", "Dinar", "Bolvadin", "Emirdağ"],
+        "Ağrı": ["Merkez", "Patnos", "Doğubayazıt", "Eleşkirt", "Diyadin"],
+        "Amasya": ["Merkez", "Merzifon", "Suluova", "Taşova", "Göynücek"],
+        "Ankara": ["Çankaya", "Keçiören", "Yenimahalle", "Etimesgut", "Mamak"],
+        "Antalya": ["Muratpaşa", "Kepez", "Konyaaltı", "Alanya", "Manavgat"],
+        "Artvin": ["Merkez", "Hopa", "Arhavi", "Borçka", "Yusufeli"],
+        "Aydın": ["Efeler", "Kuşadası", "Söke", "Nazilli", "Didim"],
+        "Balıkesir": ["Karesi", "Altıeylül", "Bandırma", "Edremit", "Gönen"],
+        "Bilecik": ["Merkez", "Bozüyük", "Osmaneli", "Söğüt", "Pazaryeri"],
+        "Bingöl": ["Merkez", "Genç", "Solhan", "Karlıova", "Adaklı"],
+        "Bitlis": ["Merkez", "Tatvan", "Ahlat", "Hizan", "Güroymak"],
+        "Bolu": ["Merkez", "Gerede", "Mudurnu", "Göynük", "Mengen"],
+        "Burdur": ["Merkez", "Bucak", "Gölhisar", "Çavdır", "Yeşilova"],
+        "Bursa": ["Osmangazi", "Yıldırım", "Nilüfer", "İnegöl", "Gemlik"],
+        "Çanakkale": ["Merkez", "Biga", "Çan", "Ezine", "Ayvacık"],
+        "Çankırı": ["Merkez", "Ilgaz", "Eldivan", "Orta", "Şabanözü"],
+        "Çorum": ["Merkez", "Sungurlu", "Osmancık", "İskilip", "Alaca"],
+        "Denizli": ["Pamukkale", "Merkezefendi", "Çivril", "Acıpayam", "Tavas"],
+        "Diyarbakır": ["Bağlar", "Yenişehir", "Kayapınar", "Sur", "Ergani"],
+        "Edirne": ["Merkez", "Keşan", "Uzunköprü", "İpsala", "Havsa"],
+        "Elazığ": ["Merkez", "Kovancılar", "Karakoçan", "Palu", "Baskil"],
+        "Erzincan": ["Merkez", "Tercan", "Üzümlü", "Refahiye", "Otlukbeli"],
+        "Erzurum": ["Yakutiye", "Palandöken", "Aziziye", "Horasan", "Oltu"],
+        "Eskişehir": ["Odunpazarı", "Tepebaşı", "Sivrihisar", "Alpu", "Çifteler"],
+        "Gaziantep": ["Şahinbey", "Şehitkamil", "Nizip", "İslahiye", "Oğuzeli"],
+        "Giresun": ["Merkez", "Tirebolu", "Görele", "Bulancak", "Espiye"],
+        "Gümüşhane": ["Merkez", "Kelkit", "Şiran", "Torul", "Köse"],
+        "Hakkari": ["Merkez", "Yüksekova", "Şemdinli", "Çukurca", "Derecik"],
+        "Hatay": ["Antakya", "Defne", "İskenderun", "Reyhanlı", "Kırıkhan"],
+        "Isparta": ["Merkez", "Yalvaç", "Eğirdir", "Şarkikaraağaç", "Gelendost"],
+        "Mersin": ["Yenişehir", "Toroslar", "Mezitli", "Akdeniz", "Tarsus"],
+        "İstanbul": ["Kadıköy", "Üsküdar", "Beşiktaş", "Bakırköy", "Beyoğlu"],
+        "İzmir": ["Konak", "Karşıyaka", "Bornova", "Buca", "Çiğli"],
+        "Kars": ["Merkez", "Kağızman", "Sarıkamış", "Selim", "Digor"],
+        "Kastamonu": ["Merkez", "Tosya", "Taşköprü", "Cide", "İnebolu"],
+        "Kayseri": ["Melikgazi", "Kocasinan", "Talas", "Develi", "Yahyalı"],
+        "Kırklareli": ["Merkez", "Lüleburgaz", "Babaeski", "Vize", "Pınarhisar"],
+        "Kırşehir": ["Merkez", "Kaman", "Mucur", "Akpınar", "Çiçekdağı"],
+        "Kocaeli": ["İzmit", "Gebze", "Darıca", "Gölcük", "Kartepe"],
+        "Konya": ["Selçuklu", "Karatay", "Meram", "Ereğli", "Akşehir"],
+        "Kütahya": ["Merkez", "Tavşanlı", "Simav", "Gediz", "Emet"],
+        "Malatya": ["Yeşilyurt", "Battalgazi", "Doğanşehir", "Akçadağ", "Darende"],
+        "Manisa": ["Yunusemre", "Şehzadeler", "Turgutlu", "Salihli", "Akhisar"],
+        "Kahramanmaraş": ["Onikişubat", "Dulkadiroğlu", "Elbistan", "Afşin", "Türkoğlu"],
+        "Mardin": ["Artuklu", "Kızıltepe", "Midyat", "Nusaybin", "Derik"],
+        "Muğla": ["Menteşe", "Bodrum", "Fethiye", "Marmaris", "Milas"],
+        "Muş": ["Merkez", "Varto", "Bulanık", "Malazgirt", "Hasköy"],
+        "Nevşehir": ["Merkez", "Ürgüp", "Avanos", "Gülşehir", "Derinkuyu"],
+        "Niğde": ["Merkez", "Bor", "Çiftlik", "Ulukışla", "Çamardı"],
+        "Ordu": ["Altınordu", "Ünye", "Fatsa", "Perşembe", "Kumru"],
+        "Rize": ["Merkez", "Çayeli", "Pazar", "Ardeşen", "İyidere"],
+        "Sakarya": ["Adapazarı", "Serdivan", "Erenler", "Hendek", "Akyazı"],
+        "Samsun": ["İlkadım", "Atakum", "Canik", "Bafra", "Çarşamba"],
+        "Siirt": ["Merkez", "Kurtalan", "Eruh", "Baykan", "Pervari"],
+        "Sinop": ["Merkez", "Boyabat", "Gerze", "Ayancık", "Durağan"],
+        "Sivas": ["Merkez", "Şarkışla", "Yıldızeli", "Suşehri", "Zara"],
+        "Tekirdağ": ["Süleymanpaşa", "Çorlu", "Çerkezköy", "Kapaklı", "Ergene"],
+        "Tokat": ["Merkez", "Erbaa", "Turhal", "Niksar", "Reşadiye"],
+        "Trabzon": ["Ortahisar", "Akçaabat", "Araklı", "Of", "Vakfıkebir"],
+        "Tunceli": ["Merkez", "Pertek", "Nazımiye", "Ovacık", "Çemişgezek"],
+        "Şanlıurfa": ["Haliliye", "Eyyübiye", "Karaköprü", "Siverek", "Viranşehir"],
+        "Uşak": ["Merkez", "Banaz", "Eşme", "Karahallı", "Ulubey"],
+        "Van": ["İpekyolu", "Tuşba", "Edremit", "Erciş", "Gevaş"],
+        "Yozgat": ["Merkez", "Sorgun", "Akdağmadeni", "Yerköy", "Boğazlıyan"],
+        "Zonguldak": ["Merkez", "Ereğli", "Devrek", "Çaycuma", "Kozlu"],
+        "Aksaray": ["Merkez", "Ortaköy", "Eskil", "Gülağaç", "Sarıyahşi"],
+        "Bayburt": ["Merkez", "Aydıntepe", "Demirözü", "Konursu", "Arpalı"],
+        "Karaman": ["Merkez", "Ermenek", "Ayrancı", "Kazımkarabekir", "Sarıveliler"],
+        "Kırıkkale": ["Merkez", "Yahşihan", "Keskin", "Delice", "Sulakyurt"],
+        "Batman": ["Merkez", "Kozluk", "Sason", "Beşiri", "Gercüş"],
+        "Şırnak": ["Merkez", "Cizre", "Silopi", "İdil", "Uludere"],
+        "Bartın": ["Merkez", "Amasra", "Ulus", "Kurucaşile", "İnkum"],
+        "Ardahan": ["Merkez", "Göle", "Hanak", "Posof", "Damal"],
+        "Iğdır": ["Merkez", "Aralık", "Tuzluca", "Karakoyunlu", "Halfeli"],
+        "Yalova": ["Merkez", "Çiftlikköy", "Altınova", "Armutlu", "Termal"],
+        "Karabük": ["Merkez", "Safranbolu", "Eskipazar", "Ovacık", "Yenice"],
+        "Kilis": ["Merkez", "Elbeyli", "Musabeyli", "Polateli", "Yavuzlu"],
+        "Osmaniye": ["Merkez", "Kadirli", "Düziçi", "Bahçe", "Toprakkale"],
+        "Düzce": ["Merkez", "Akçakoca", "Kaynaşlı", "Gölyaka", "Cumayeri"]
+    };
+
+    function populateIlceSelect(selectId, ilValue) {
+        const sel = document.getElementById(selectId);
+        if (!sel) return;
+        sel.innerHTML = "";
+        if (!ilValue) {
+            const opt = document.createElement('option');
+            opt.value = "";
+            opt.textContent = "Önce il seçiniz";
+            sel.appendChild(opt);
+            return;
+        }
+        const merkezOpt = document.createElement('option');
+        merkezOpt.value = "İl Teşkilatı";
+        merkezOpt.textContent = ilValue + " İl Teşkilatı (Merkez)";
+        sel.appendChild(merkezOpt);
+        const ilceler = ilcelerByIl[ilValue] || [];
+        ilceler.forEach(ilceAd => {
+            const opt = document.createElement('option');
+            opt.value = ilceAd;
+            opt.textContent = ilceAd;
+            sel.appendChild(opt);
+        });
+    }
+
+const kodByIl = {};
+    teskilatData.forEach(item => {
+        kodByIl[item.il] = item.kod;
+    });
+
+    function getAssignments() {
+        let raw = localStorage.getItem('tgp_admin_atamalar') || '[]';
+        let list = [];
+        try {
+            list = JSON.parse(raw);
+        } catch (e) {
+            list = [];
+        }
+        if (!Array.isArray(list)) list = [];
+        return list;
+    }
+
+    function saveAssignments(list) {
+        localStorage.setItem('tgp_admin_atamalar', JSON.stringify(list));
+    }
+
+    function getApplications() {
+        let raw = localStorage.getItem('tgp_basvurular') || '[]';
+        let list = [];
+        try {
+            list = JSON.parse(raw);
+        } catch (e) {
+            list = [];
+        }
+        if (!Array.isArray(list)) list = [];
+        return list;
+    }
+
+    function saveApplications(list) {
+        localStorage.setItem('tgp_basvurular', JSON.stringify(list));
+    }
+
+    // TEŞKİLAT: yalnızca atanmışları göster
+    function renderTeskilatAssignedOnly() {
+        const container = document.getElementById('teskilat-liste');
+        if (!container) return;
+
+        const assignments = getAssignments();
+        container.innerHTML = '';
+
+        if (assignments.length === 0) {
+            const div = document.createElement('div');
+            div.className = 'teskilat-empty-note';
+            div.textContent = 'Henüz atanmış il veya ilçe teşkilat görevlisi bulunmamaktadır. Görev / üyelik başvuruları onaylandıkça burada görünecektir.';
+            container.appendChild(div);
+            return;
+        }
+
+        // İl ve ilçe bazında grupla
+        const byIl = {};
+        assignments.forEach(item => {
+            const il = (item.il || '').trim();
+            const ilce = (item.ilce || 'İl Teşkilatı').trim();
+            if (!il) return;
+
+            if (!byIl[il]) {
+                byIl[il] = { il: il, ilceler: {} };
+            }
+            if (!byIl[il].ilceler[ilce]) {
+                byIl[il].ilceler[ilce] = [];
+            }
+            byIl[il].ilceler[ilce].push(item);
+        });
+
+        const ilList = Object.values(byIl).sort((a, b) => {
+            const ka = kodByIl[a.il] || '99';
+            const kb = kodByIl[b.il] || '99';
+            if (ka === kb) return a.il.localeCompare(b.il);
+            return ka.localeCompare(kb);
+        });
+
+        ilList.forEach(group => {
+            const kod = kodByIl[group.il] || '–';
+
+            const article = document.createElement('article');
+            article.className = 'program-item';
+
+            const btn = document.createElement('button');
+            btn.className = 'program-toggle';
+            btn.innerHTML = `
+                <span>${kod}. ${group.il} İl Teşkilatı – Atanmış Görevliler</span>
+                <span class="program-icon">+</span>
+            `;
+
+            const panel = document.createElement('div');
+            panel.className = 'program-panel';
+
+            const p = document.createElement('p');
+            p.textContent = group.il + ' il teşkilatında atanmış görevli ve genel üyelerin listesi aşağıda yer almaktadır.';
+            panel.appendChild(p);
+
+            const ul = document.createElement('ul');
+
+            const ilceNames = Object.keys(group.ilceler).sort((a, b) => {
+                if (a === 'İl Teşkilatı') return -1;
+                if (b === 'İl Teşkilatı') return 1;
+                return a.localeCompare(b);
+            });
+
+            ilceNames.forEach(ilceName => {
+                const li = document.createElement('li');
+
+                const strong = document.createElement('span');
+                strong.className = 'teskilat-ilce-title';
+                strong.textContent = ilceName + ': ';
+                li.appendChild(strong);
+
+                const personsUl = document.createElement('ul');
+                personsUl.className = 'teskilat-gorevli-list';
+
+                group.ilceler[ilceName].forEach(kisi => {
+                    const pli = document.createElement('li');
+                    const poz = (kisi.pozisyon || '').trim();
+                    pli.textContent = kisi.isim + (poz ? ' (' + poz + ')' : '');
+                    personsUl.appendChild(pli);
+                });
+
+                li.appendChild(personsUl);
+                ul.appendChild(li);
+            });
+
+            panel.appendChild(ul);
+            article.appendChild(btn);
+            article.appendChild(panel);
+            container.appendChild(article);
+        });
+    }
+
+    // Üye / başvuru sayısı
+    function updateUyeSayisi() {
+        const el = document.getElementById('uye-sayisi');
+        if (!el) return;
+
+        const basvurular = getApplications();
+        const atamalar = getAssignments();
+        const toplam = basvurular.length + atamalar.length;
+        el.textContent = toplam.toString();
+    }
+
+    // Yönetici panelini doldur
+    function loadAdminState() {
+        const list = getAssignments();
+        const countEl = document.getElementById('admin-panel-uye-count');
+        const listEl = document.getElementById('admin-panel-list');
+
+        if (countEl) countEl.textContent = list.length.toString();
+
+        if (listEl) {
+            listEl.innerHTML = '';
+            list.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.textContent = `${item.isim} – ${item.pozisyon || 'Pozisyon belirtilmemiş'} (${item.il}${item.ilce ? ' / ' + item.ilce : ''})`;
+
+                const delBtn = document.createElement('button');
+                delBtn.className = 'admin-delete-btn';
+                delBtn.textContent = 'Sil';
+                delBtn.addEventListener('click', () => {
+                    const all = getAssignments();
+                    all.splice(index, 1);
+                    saveAssignments(all);
+                    loadAdminState();
+                    renderTeskilatAssignedOnly();
+                    updateUyeSayisi();
+                });
+
+                li.appendChild(delBtn);
+                listEl.appendChild(li);
+            });
+        }
+    }
+
+    // Bekleyen başvuruları yükle
+    function loadApplications() {
+        const list = getApplications();
+        const ul = document.getElementById('admin-panel-applications');
+        if (!ul) return;
+        ul.innerHTML = '';
+
+        list.forEach((item, index) => {
+            const turLabel = item.tur === 'uyelik'
+                ? 'Genel Üyelik Başvurusu'
+                : 'Teşkilat Görev Başvurusu';
+
+            const li = document.createElement('li');
+            li.innerHTML =
+                `<strong>${item.isim}</strong> – ${item.il}${item.ilce ? ' / ' + item.ilce : ''}<br>` +
+                `<span class="admin-application-note">Tür: ${turLabel}</span><br>` +
+                `<span class="admin-application-note">Görev Talebi: ${item.pozisyon || 'Genel Üyelik / Belirtilmemiş'}</span><br>` +
+                `<span class="admin-application-note">İletişim: ${item.email || ''} / ${item.tel || ''}</span>`;
+
+            const approveBtn = document.createElement('button');
+            approveBtn.className = 'admin-approve-btn';
+            approveBtn.textContent = 'Onayla (Ata)';
+            approveBtn.addEventListener('click', () => {
+                approveApplication(index);
+            });
+
+            const delBtn = document.createElement('button');
+            delBtn.className = 'admin-delete-btn';
+            delBtn.textContent = 'Sil';
+            delBtn.addEventListener('click', () => {
+                const all = getApplications();
+                all.splice(index, 1);
+                saveApplications(all);
+                loadApplications();
+                updateUyeSayisi();
+            });
+
+            li.appendChild(approveBtn);
+            li.appendChild(delBtn);
+            ul.appendChild(li);
+        });
+    }
+
+    function approveApplication(index) {
+        const basvurular = getApplications();
+        const atamalar = getAssignments();
+
+        const secilen = basvurular[index];
+        if (!secilen) return;
+
+        // Genel üyelik başvurusu ise ve pozisyon boşsa otomatik "Genel Üye" ata
+        let pozisyon = secilen.pozisyon || '';
+        if ((!pozisyon || pozisyon.trim() === '') && secilen.tur === 'uyelik') {
+            pozisyon = 'Genel Üye';
+        }
+
+        atamalar.push({
+            isim: secilen.isim,
+            pozisyon: pozisyon || '',
+            il: secilen.il || '',
+            ilce: secilen.ilce || 'İl Teşkilatı'
+        });
+
+        basvurular.splice(index, 1);
+        saveAssignments(atamalar);
+        saveApplications(basvurular);
+
+        loadAdminState();
+        loadApplications();
+        renderTeskilatAssignedOnly();
+        updateUyeSayisi();
+    }
+
+    // TEŞKİLAT GÖREV BAŞVURU FORMU
+    function setupBasvuruForm() {
+        const form = document.getElementById('basvuru-form');
+        const sonuc = document.getElementById('basvuru-sonuc');
+        if (!form) return;
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const isim = document.getElementById('bf-adsoyad').value.trim();
+            const tc = document.getElementById('bf-tc').value.trim();
+            const dogum = document.getElementById('bf-dogum').value.trim();
+            const tel = document.getElementById('bf-telefon').value.trim();
+            const email = document.getElementById('bf-email').value.trim();
+            const il = document.getElementById('bf-il').value.trim();
+            let ilce = document.getElementById('bf-ilce').value.trim();
+            const pozisyon = document.getElementById('bf-pozisyon').value.trim();
+            const egitim = document.getElementById('bf-egitim').value;
+            const adres = document.getElementById('bf-adres').value.trim();
+            const aciklama = document.getElementById('bf-aciklama').value.trim();
+
+            const kvkk = document.getElementById('bf-kvkk');
+            if (!kvkk || !kvkk.checked) {
+                if (sonuc) {
+                    sonuc.textContent = 'Lütfen KVKK metnini okuyup onay kutucuğunu işaretleyiniz.';
+                    sonuc.style.color = '#b91c1c';
+                }
+                return;
+            }
+
+            if (!isim || !tc || !dogum || !tel || !email || !il || !pozisyon || !egitim || !adres) {
+                if (sonuc) {
+                    sonuc.textContent = 'Lütfen zorunlu alanları doldurunuz.';
+                    sonuc.style.color = '#b91c1c';
+                }
+                return;
+            }
+
+            // Basit TC kontrolü: 11 hane sayısal
+            if (!/^[0-9]{11}$/.test(tc)) {
+                if (sonuc) {
+                    sonuc.textContent = 'TC Kimlik No 11 haneli sayısal olmalıdır.';
+                    sonuc.style.color = '#b91c1c';
+                }
+                return;
+            }
+
+            if (!ilce) ilce = 'İl Teşkilatı';
+
+            const list = getApplications();
+            list.push({
+                tur: 'teskilat',
+                isim,
+                tc,
+                dogum,
+                tel,
+                email,
+                il,
+                ilce,
+                pozisyon,
+                egitim,
+                adres,
+                aciklama,
+                tarih: new Date().toISOString()
+            });
+
+            saveApplications(list);
+            form.reset();
+            if (sonuc) {
+                sonuc.textContent = 'Teşkilat görev başvurunuz alınmıştır. Yönetici panelinden değerlendirilecektir.';
+                sonuc.style.color = '#047857';
+            }
+
+            loadApplications();
+            updateUyeSayisi();
+        });
+    }
+
+    // GENEL ÜYELİK FORMU
+    function setupUyelikForm() {
+        const form = document.getElementById('uyelik-form');
+        const sonuc = document.getElementById('uyelik-sonuc');
+        if (!form) return;
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const isim = document.getElementById('uf-adsoyad').value.trim();
+            const tc = document.getElementById('uf-tc').value.trim();
+            const dogum = document.getElementById('uf-dogum').value.trim();
+            const tel = document.getElementById('uf-telefon').value.trim();
+            const email = document.getElementById('uf-email').value.trim();
+            const il = document.getElementById('uf-il').value.trim();
+            let ilce = document.getElementById('uf-ilce').value.trim();
+            const egitim = document.getElementById('uf-egitim').value;
+            const adres = document.getElementById('uf-adres').value.trim();
+            const aciklama = document.getElementById('uf-aciklama').value.trim();
+
+            if (!isim || !tc || !dogum || !tel || !email || !il || !egitim || !adres) {
+                if (sonuc) {
+                    sonuc.textContent = 'Lütfen zorunlu alanları doldurunuz.';
+                    sonuc.style.color = '#b91c1c';
+                }
+                return;
+            }
+
+            // Basit TC kontrolü: 11 hane sayısal
+            if (!/^[0-9]{11}$/.test(tc)) {
+                if (sonuc) {
+                    sonuc.textContent = 'TC Kimlik No 11 haneli sayısal olmalıdır.';
+                    sonuc.style.color = '#b91c1c';
+                }
+                return;
+            }
+
+            if (!ilce) ilce = 'İl Teşkilatı';
+
+            const list = getApplications();
+            list.push({
+                tur: 'uyelik',
+                isim,
+                tc,
+                dogum,
+                tel,
+                email,
+                il,
+                ilce,
+                pozisyon: '', // genel üyelikte pozisyon boş, onayda "Genel Üye" atanabilir
+                egitim,
+                adres,
+                aciklama,
+                tarih: new Date().toISOString()
+            });
+
+            saveApplications(list);
+            form.reset();
+            if (sonuc) {
+                sonuc.textContent = 'Genel üyelik başvurunuz alınmıştır. Yönetici panelinden değerlendirilecektir.';
+                sonuc.style.color = '#047857';
+            }
+
+            loadApplications();
+            updateUyeSayisi();
+        });
+    }
+
+    // İletişim formu (demo)
+    function setupIletisimForm() {
+        const form = document.getElementById('iletisim-form');
+        if (!form) return;
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            alert('Mesajınız demo ortamında kaydedildi (sunucuya gitmez).');
+            form.reset();
+        });
+    }
+
+    // Yönetici modalları
+    function setupAdminModals() {
+        const adminLink = document.getElementById('admin-link');
+        const loginModal = document.getElementById('admin-login-modal');
+        const panelModal = document.getElementById('admin-panel-modal');
+        const loginForm = document.getElementById('admin-login-form');
+        const loginError = document.getElementById('admin-login-error');
+        const loginClose = document.getElementById('admin-login-close');
+        const panelClose = document.getElementById('admin-panel-close');
+
+        if (!adminLink || !loginModal || !panelModal || !loginForm) return;
+
+        const ADMIN_USER = 'admin';
+        const ADMIN_PASS = '1234';
+
+        function openLogin() {
+            loginModal.classList.add('is-open');
+            loginModal.setAttribute('aria-hidden', 'false');
+        }
+
+        function closeLogin() {
+            loginModal.classList.remove('is-open');
+            loginModal.setAttribute('aria-hidden', 'true');
+        }
+
+        function openPanel() {
+            panelModal.classList.add('is-open');
+            panelModal.setAttribute('aria-hidden', 'false');
+            loadAdminState();
+            loadApplications();
+        }
+
+        function closePanel() {
+            panelModal.classList.remove('is-open');
+            panelModal.setAttribute('aria-hidden', 'true');
+        }
+
+        adminLink.addEventListener('click', e => {
+            e.preventDefault();
+            openLogin();
+        });
+
+        if (loginClose) loginClose.addEventListener('click', closeLogin);
+        if (panelClose) panelClose.addEventListener('click', closePanel);
+
+        loginModal.addEventListener('click', e => {
+            if (e.target === loginModal) closeLogin();
+        });
+
+        panelModal.addEventListener('click', e => {
+            if (e.target === panelModal) closePanel();
+        });
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                if (loginModal.classList.contains('is-open')) closeLogin();
+                if (panelModal.classList.contains('is-open')) closePanel();
+            }
+        });
+
+        loginForm.addEventListener('submit', e => {
+            e.preventDefault();
+            const u = document.getElementById('admin-username').value.trim();
+            const p = document.getElementById('admin-password').value.trim();
+
+            if (u === ADMIN_USER && p === ADMIN_PASS) {
+                if (loginError) loginError.textContent = '';
+                closeLogin();
+                openPanel();
+            } else {
+                if (loginError) loginError.textContent = 'Kullanıcı adı veya şifre hatalı.';
+            }
+        });
+    }
+
+    // Yönetici panelinden manuel atama
+    function setupAdminAssignmentForm() {
+        const kaydetBtn = document.getElementById('admin-panel-kaydet');
+        const temizleBtn = document.getElementById('admin-panel-temizle');
+
+        if (kaydetBtn) {
+            kaydetBtn.addEventListener('click', () => {
+                const isim = document.getElementById('admin-panel-isim').value.trim();
+                const pozisyon = document.getElementById('admin-panel-pozisyon').value.trim();
+                const il = document.getElementById('admin-panel-il').value.trim();
+                const ilceRaw = document.getElementById('admin-panel-ilce').value.trim();
+                const ilce = ilceRaw || 'İl Teşkilatı';
+
+                if (!isim || !il) {
+                    alert('İsim ve il alanları zorunludur.');
+                    return;
+                }
+
+                const list = getAssignments();
+                list.push({ isim, pozisyon, il, ilce });
+                saveAssignments(list);
+
+                document.getElementById('admin-panel-isim').value = '';
+                document.getElementById('admin-panel-pozisyon').value = '';
+                document.getElementById('admin-panel-il').value = '';
+                document.getElementById('admin-panel-ilce').value = '';
+
+                loadAdminState();
+                renderTeskilatAssignedOnly();
+                updateUyeSayisi();
+            });
+        }
+
+        if (temizleBtn) {
+            temizleBtn.addEventListener('click', () => {
+                if (!confirm('Tüm atama kayıtları silinecektir. Emin misiniz?')) return;
+                saveAssignments([]);
+                loadAdminState();
+                renderTeskilatAssignedOnly();
+                updateUyeSayisi();
+            });
+        }
+    }
+
+    // Accordion davranışı
+    function setupAccordions() {
+        document.addEventListener('click', e => {
+            const btn = e.target.closest('.program-toggle');
+            if (!btn) return;
+            const item = btn.closest('.program-item');
+            if (!item) return;
+            item.classList.toggle('open');
+        });
+    }
+
+
+    function seedDemoDataIfEmpty() {
+        const existingAssignments = getAssignments();
+        const existingApplications = getApplications();
+
+        // Sadece ilk açılışta, veri yoksa demo doldur
+        if (existingAssignments.length || existingApplications.length) {
+            return;
+        }
+
+        const demoPositions = [
+            "İl Başkanı",
+            "İlçe Başkanı",
+            "İl Yönetim Kurulu Üyesi",
+            "İlçe Yönetim Kurulu Üyesi",
+            "Gençlik Kolları Başkanı",
+            "Gençlik Kolları Üyesi",
+            "Kadın Kolları Başkanı",
+            "Kadın Kolları Üyesi",
+            "Mahalle Temsilcisi",
+            "Sandık Görevlisi",
+            "Basın ve Tanıtım",
+            "Hukuk Komisyonu",
+            "Seçim Koordinasyon Merkezi",
+            "Gönüllü Çalışan",
+            "Genel Üye"
+        ];
+
+        const newAssignments = [];
+        const newApplications = [];
+        let memberIndex = 1;
+
+        // Yaklaşık 180 atanmış görevli
+        const targetAssignments = 180;
+        assignLoop:
+        for (let i = 0; i < teskilatData.length; i++) {
+            const ilName = teskilatData[i].il;
+            for (let j = 0; j < 3; j++) {
+                if (newAssignments.length >= targetAssignments) break assignLoop;
+
+                const ilceName = j === 0 ? "İl Teşkilatı" : ("İlçe " + j);
+                const pos = demoPositions[(newAssignments.length + i + j) % demoPositions.length];
+
+                newAssignments.push({
+                    isim: "Demo Üye " + String(memberIndex).padStart(3, "0"),
+                    pozisyon: pos,
+                    il: ilName,
+                    ilce: ilceName
+                });
+                memberIndex++;
+            }
+        }
+
+        // Toplamın 300 olması için kalanını başvuru olarak doldur
+        const targetTotal = 300;
+        const remaining = targetTotal - newAssignments.length;
+        const targetApplications = remaining > 0 ? remaining : 0;
+
+        for (let k = 0; k < targetApplications; k++) {
+            const ilObj = teskilatData[k % teskilatData.length];
+            const ilName = ilObj.il;
+            const ilceName = (k % 2 === 0) ? "Merkez" : ("İlçe " + ((k % 3) + 1));
+            const isUyelik = k % 2 === 1;
+            const pos = isUyelik ? "" : demoPositions[k % demoPositions.length];
+
+            const tcStr = String(10000000000 + ((k + 1) % 9000000000)).slice(0, 11);
+
+            newApplications.push({
+                tur: isUyelik ? "uyelik" : "teskilat",
+                isim: "Demo Başvuru " + String(memberIndex).padStart(3, "0"),
+                tc: tcStr,
+                dogum: "1995-01-01",
+                tel: "+90 555 000 " + String((k + 1) % 1000).padStart(3, "0"),
+                email: "demo" + memberIndex + "@ornek.org",
+                il: ilName,
+                ilce: ilceName,
+                pozisyon: pos,
+                egitim: "lisans",
+                adres: ilName + " " + ilceName + " adres",
+                aciklama: "Demo amaçlı oluşturulmuş başvuru kaydı.",
+                tarih: new Date().toISOString()
+            });
+            memberIndex++;
+        }
+
+        saveAssignments(newAssignments);
+        saveApplications(newApplications);
+    }
+
+    
+    function setupKvkkModal() {
+        const link = document.getElementById('kvkk-aydinlatma-link');
+        const modal = document.getElementById('kvkk-aydinlatma-modal');
+        const closeBtn = document.getElementById('kvkk-aydinlatma-close');
+        if (!link || !modal) return;
+
+        function closeModal() {
+            modal.classList.remove('is-open');
+            modal.setAttribute('aria-hidden', 'true');
+        }
+
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            modal.classList.add('is-open');
+            modal.setAttribute('aria-hidden', 'false');
+        });
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function () {
+                closeModal();
+            });
+        }
+
+        // Arka plana tıklayınca kapansın
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Esc ile kapatma
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    }
+
+document.addEventListener('DOMContentLoaded', () => {
+        seedDemoDataIfEmpty();
+        // İl dropdownlarını doldur
+        populateIlSelect('bf-il');
+        populateIlSelect('admin-panel-il');
+        // Başlangıçta ilçe seçimini hazırla
+        populateIlceSelect('bf-ilce', '');
+        const bfIl = document.getElementById('bf-il');
+        if (bfIl) {
+            bfIl.addEventListener('change', function () {
+                populateIlceSelect('bf-ilce', this.value);
+            });
+        }
+        renderTeskilatAssignedOnly();
+        updateUyeSayisi();
+
+        setupBasvuruForm();
+        setupKvkkModal();
+        setupUyelikForm();
+        setupIletisimForm();
+        setupAdminModals();
+        setupAdminAssignmentForm();
+        setupAccordions();
+        loadApplications();
+        loadAdminState();
+    });
+</script>
+
+</body>
+</html>
